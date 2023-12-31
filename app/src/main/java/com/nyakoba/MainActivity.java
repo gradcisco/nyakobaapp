@@ -39,12 +39,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getData();
+       // getData();
     }
 
     public void login(View view){
 
-        getData();
+     //   getData();
 
         editTextUsername = findViewById(R.id.username);
         editTextPassword = findViewById(R.id.userpassword);
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         String apiUrl = "https://webhook.site/a05a1418-856f-45d9-b577-2cfb2f16ab1a";
         String postData = "{\n" +
-                "\"username\": \"Dennis\",\n" +
+                "\"username\": \"Somi\",\n" +
                 "\"password\": \"twwter\"\n" +
                 "}";
 

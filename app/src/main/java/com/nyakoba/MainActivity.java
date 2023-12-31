@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         try{
             RestTemplate restTemplate = new RestTemplate();
-            restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
+           // restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
            /* restTemplate.getMessageConverters().forEach(mc -> {
                 Toast.makeText(MainActivity.this, mc.getClass().toString(),Toast.LENGTH_SHORT).show();
             });*/
@@ -62,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "result",Toast.LENGTH_SHORT).show();
         }
         catch(Exception ex){
-            Toast.makeText(MainActivity.this, ex.getMessage(),Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(MainActivity.this, "Error::" + ex.getMessage(),Toast.LENGTH_SHORT).show();
         }
 
     }

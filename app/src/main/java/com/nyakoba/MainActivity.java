@@ -44,14 +44,20 @@ public class MainActivity extends AppCompatActivity {
         loginRequest1.setUsername(username);
         loginRequest1.setPassword(password);
 
-        RestTemplate restTemplate = new RestTemplate();
-        String url = "https://webhook.site/a05a1418-856f-45d9-b577-2cfb2f16ab1a";
-        HttpHeaders headers = new HttpHeaders();
-        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-        HttpEntity<LoginRequest> entity = new HttpEntity<LoginRequest>(loginRequest1 , headers);
-        String result = restTemplate.exchange(url, HttpMethod.POST , entity, String.class).getBody();
+        try{
+            RestTemplate restTemplate = new RestTemplate();
+            String url = "https://webhook.site/a05a1418-856f-45d9-b577-2cfb2f16ab1a";
+            HttpHeaders headers = new HttpHeaders();
+            headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+            HttpEntity<LoginRequest> entity = new HttpEntity<LoginRequest>(loginRequest1 , headers);
+            String result = restTemplate.exchange(url, HttpMethod.POST , entity, String.class).getBody();
 
-        Toast.makeText(MainActivity.this, "result",Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "result",Toast.LENGTH_SHORT).show();
+        }
+        catch(Exception ex){
+            Toast.makeText(MainActivity.this, ex.getMessage(),Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 

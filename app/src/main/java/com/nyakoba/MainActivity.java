@@ -50,66 +50,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void userLogin(View view){
 
-        editTextUsername = findViewById(R.id.username);
-        editTextPassword = findViewById(R.id.userpassword);
-        String username = editTextUsername.getText().toString();
-        String password = editTextPassword.getText().toString();
-        Toast.makeText(MainActivity.this, "Hello there Username = " + username + " and password = " + password,Toast.LENGTH_SHORT).show();
-
-        LoginRequest loginRequest1 = new LoginRequest();
-        loginRequest1.setUsername(username);
-        loginRequest1.setPassword(password);
-
-        String postData = "{\n" +
-                "\"username\": \"Somi\",\n" +
-                "\"password\": \"twwter\"\n" +
-                "}";
-
-
-
-
-        try {
-            URL url_ = new URL(url);
-            HttpURLConnection urlConnection = (HttpURLConnection) url_.openConnection();
-
-            // Set up the connection properties
-            urlConnection.setRequestMethod("POST");
-            urlConnection.setRequestProperty("Content-Type", "application/json");
-            urlConnection.setDoOutput(true);
-
-            // Write the data to the request
-            OutputStream outputStream = urlConnection.getOutputStream();
-            outputStream.write(postData.getBytes());
-            outputStream.flush();
-
-            // Get the response
-            BufferedReader reader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-            StringBuilder response = new StringBuilder();
-            String line;
-
-            while ((line = reader.readLine()) != null) {
-                response.append(line);
-            }
-
-            // Close resources
-            reader.close();
-            outputStream.close();
-
-            Toast.makeText(MainActivity.this, response.toString() ,Toast.LENGTH_SHORT).show();
-
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            Toast.makeText(MainActivity.this, e.getMessage() ,Toast.LENGTH_SHORT).show();
-
-        }
-
+        getData();
     }
 
     public void login(View view){
 
-     //   getData();
+        getData();
 
         editTextUsername = findViewById(R.id.username);
         editTextPassword = findViewById(R.id.userpassword);

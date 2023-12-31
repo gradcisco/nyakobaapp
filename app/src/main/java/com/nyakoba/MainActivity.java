@@ -6,13 +6,14 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.nyakoba.model.LoginRequest;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.web.client.RestTemplate;
 
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,7 +46,48 @@ public class MainActivity extends AppCompatActivity {
         loginRequest1.setUsername(username);
         loginRequest1.setPassword(password);
 
-        try{
+        String apiUrl = "https://webhook.site/a05a1418-856f-45d9-b577-2cfb2f16ab1a";
+        String postData = "{\n" +
+                "\"username\": \"Dennis\",\n" +
+                "\"password\": \"twwter\"\n" +
+                "}";
+
+        try {
+            URL url = new URL(apiUrl);
+            HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+
+            // Set up the connection properties
+            urlConnection.setRequestMethod("POST");
+            urlConnection.setRequestProperty("Content-Type", "application/json");
+            urlConnection.setDoOutput(true);
+
+            // Write the data to the request
+            OutputStream outputStream = urlConnection.getOutputStream();
+            outputStream.write(postData.getBytes());
+            outputStream.flush();
+
+            // Get the response
+            BufferedReader reader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+            StringBuilder response = new StringBuilder();
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                response.append(line);
+            }
+
+            // Close resources
+            reader.close();
+            outputStream.close();
+
+            //return response.toString();
+            System.out.println(response.toString());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+           // return null;
+        }
+
+        /*try{
             Toast.makeText(MainActivity.this, "1",Toast.LENGTH_SHORT).show();
             RestTemplate restTemplate = new RestTemplate();
             Toast.makeText(MainActivity.this, "2",Toast.LENGTH_SHORT).show();
@@ -53,9 +95,9 @@ public class MainActivity extends AppCompatActivity {
 
 
             // restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
-           /* restTemplate.getMessageConverters().forEach(mc -> {
+           *//* restTemplate.getMessageConverters().forEach(mc -> {
                 Toast.makeText(MainActivity.this, mc.getClass().toString(),Toast.LENGTH_SHORT).show();
-            });*/
+            });*//*
             //Toast.makeText(MainActivity.this, "No converter",Toast.LENGTH_SHORT).show();
 
             String url = "https://webhook.site/a05a1418-856f-45d9-b577-2cfb2f16ab1a";
@@ -70,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         catch(Exception ex){
 
             Toast.makeText(MainActivity.this, "Error::" + ex.getMessage(),Toast.LENGTH_SHORT).show();
-        }
+        }*/
 
     }
 

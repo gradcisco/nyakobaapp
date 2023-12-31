@@ -88,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
             System.out.println(response.toString());
 
         } catch (IOException e) {
+            Toast.makeText(MainActivity.this, "Error::" + e.getMessage(),Toast.LENGTH_SHORT).show();
             e.printStackTrace();
            // return null;
         }

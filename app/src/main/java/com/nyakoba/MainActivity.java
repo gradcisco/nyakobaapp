@@ -14,21 +14,6 @@ import com.android.volley.toolbox.Volley;
 import com.nyakoba.model.LoginRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.web.client.RestTemplate;
-
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
     private ProgressBar loadingPB;
     private String url = "https://webhook.site/a05a1418-856f-45d9-b577-2cfb2f16ab1a";
-    //private String url = "https://run.mocky.io/v3/85cf9aaf-aa4f-41bf-b10c-308f032f7ccc";
 
     private EditText editTextUsername, editTextPassword;
 
@@ -56,14 +40,19 @@ public class MainActivity extends AppCompatActivity {
     public void userLogin(View view){
 
         Toast.makeText(getApplicationContext(), "Starting req", Toast.LENGTH_SHORT).show();//display the response on screen
+        editTextUsername = findViewById(R.id.username);
+        editTextPassword = findViewById(R.id.userpassword);
 
+        String username = editTextUsername.getText().toString();
+        String password = editTextPassword.getText().toString();
 
         //  getData();
 
         // Example JSON data
         JSONObject jsonData = new JSONObject();
         try {
-            jsonData.put("key", "value");
+            jsonData.put("username", username);
+            jsonData.put("password", password);
         } catch (JSONException e) {
             e.printStackTrace();
         }

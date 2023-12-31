@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:text="Please Login To Proceed"
                     android:textColor="@color/my_primary"
-                    android:textSize="32sp"
+                    android:textSize="28sp"
                     android:alpha="0.7"
                     android:textStyle="bold"/>
 
@@ -103,6 +103,7 @@
             <com.google.android.material.button.MaterialButton
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
+                    android:onClick="login"
                     android:text="Login"/>
 
 

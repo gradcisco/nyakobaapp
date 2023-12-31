@@ -48,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
         try{
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
+            restTemplate.getMessageConverters().forEach(mc -> {
+                Toast.makeText(MainActivity.this, mc.getClass().toString(),Toast.LENGTH_SHORT).show();
+            });
+            Toast.makeText(MainActivity.this, "No converter",Toast.LENGTH_SHORT).show();
+
             String url = "https://webhook.site/a05a1418-856f-45d9-b577-2cfb2f16ab1a";
             HttpHeaders headers = new HttpHeaders();
             headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));

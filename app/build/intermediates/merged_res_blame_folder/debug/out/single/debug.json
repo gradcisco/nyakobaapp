@@ -12,8 +12,16 @@
         "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\mipmap-anydpi-v33\\ic_launcher.xml"
     },
     {
+        "merged": "com.nyakoba.app-merged_res-25:/drawable_username_icon.xml.flat",
+        "source": "com.nyakoba.app-main-27:/drawable/username_icon.xml"
+    },
+    {
         "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.nyakoba.app-merged_res-25:/drawable_location_icon.xml.flat",
+        "source": "com.nyakoba.app-main-27:/drawable/location_icon.xml"
     },
     {
         "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -34,6 +42,14 @@
     {
         "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.nyakoba.app-merged_res-25:/drawable_password_icon.xml.flat",
+        "source": "com.nyakoba.app-main-27:/drawable/password_icon.xml"
+    },
+    {
+        "merged": "com.nyakoba.app-merged_res-25:/drawable_nyakobatea.jpg.flat",
+        "source": "com.nyakoba.app-main-27:/drawable/nyakobatea.jpg"
     },
     {
         "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\drawable-v24_ic_launcher_foreground.xml.flat",

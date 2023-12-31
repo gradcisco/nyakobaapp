@@ -12,31 +12,32 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/my_primary"
-            android:alpha="0.5"/>
+            android:alpha="0.5">
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="1dp">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="28dp">
 
-        <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:src="@drawable/location_icon"/>
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="100dp"
+                    android:paddingTop="120dp"
+                    android:src="@drawable/location_icon"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome To Nyakoba Agent App"
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nyakoba Agent App"
-                android:textStyle="bold"
-                android:fontFamily="sans-serif-medium"
-                android:textSize="32sp"
-                android:textColor="@color/white"/>
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="24sp"
+                    android:textColor="@color/white"/>
 
-    </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
 
     <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -96,14 +97,13 @@
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"/>
 
-            <View 
+            <View
                   android:layout_width="wrap_content"
                   android:layout_height="10dp"/>
             <com.google.android.material.button.MaterialButton
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:text="Login"
-                    app:cornerRadius="32dp"/>
+                    android:text="Login"/>
 
 
 

@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void login(View view){
 
+        getData();
+
         editTextUsername = findViewById(R.id.username);
         editTextPassword = findViewById(R.id.userpassword);
 
@@ -80,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getData() {
+
+        Toast.makeText(getApplicationContext(), "Starting req", Toast.LENGTH_SHORT).show();//display the response on screen
         // RequestQueue initialized
         mRequestQueue = Volley.newRequestQueue(this);
 

@@ -2520,7 +2520,8 @@ int drawable test_level_drawable 0x7f0700a6
 int drawable tooltip_frame_dark 0x7f0700a7
 int drawable tooltip_frame_light 0x7f0700a8
 int drawable username_icon 0x7f0700a9
-int drawable write 0x7f0700aa
+int drawable withdraw 0x7f0700aa
+int drawable write 0x7f0700ab
 int id ALT 0x7f080000
 int id BOTTOM_END 0x7f080001
 int id BOTTOM_START 0x7f080002

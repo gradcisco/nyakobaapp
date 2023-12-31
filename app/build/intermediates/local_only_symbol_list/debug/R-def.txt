@@ -24,6 +24,7 @@ drawable practice
 drawable profile
 drawable settings
 drawable username_icon
+drawable withdraw
 drawable write
 id backB
 id cardView

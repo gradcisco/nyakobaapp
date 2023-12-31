@@ -123,10 +123,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void postDataUsingVolley(String username, String password) {
+        Toast.makeText(getApplicationContext(), "Starting req", Toast.LENGTH_SHORT).show();//display the response on screen
+
         // on below line specifying the url at which we have to make a post request
        // String url = "https://reqres.in/api/users";
         // setting progress bar visibility on below line.
-        loadingPB.setVisibility(View.VISIBLE);
+        //loadingPB.setVisibility(View.VISIBLE);
         // creating a new variable for our request queue
         RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
         // making a string request on below line.
@@ -134,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 // channing progress bar visibility on below line.
-                loadingPB.setVisibility(View.GONE);
+              //  loadingPB.setVisibility(View.GONE);
                 // setting response to text view.
                // responseTV.setText("Response from the API is :" + response);
                 // displaying toast message.

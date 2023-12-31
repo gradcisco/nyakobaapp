@@ -3,13 +3,12 @@ package com.nyakoba;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
+import com.android.volley.*;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.nyakoba.model.LoginRequest;
@@ -28,6 +27,8 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
     private RequestQueue mRequestQueue;
     private StringRequest mStringRequest;
+
+    private ProgressBar loadingPB;
     private String url = "https://webhook.site/a05a1418-856f-45d9-b577-2cfb2f16ab1a";
     //private String url = "https://run.mocky.io/v3/85cf9aaf-aa4f-41bf-b10c-308f032f7ccc";
 
@@ -50,7 +53,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void userLogin(View view){
 
-        getData();
+      //  getData();
+
+        postDataUsingVolley("Dennis" , "123");
     }
 
     public void login(View view){
@@ -115,6 +120,48 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mRequestQueue.add(mStringRequest);
+    }
+
+    private void postDataUsingVolley(String username, String password) {
+        // on below line specifying the url at which we have to make a post request
+       // String url = "https://reqres.in/api/users";
+        // setting progress bar visibility on below line.
+        loadingPB.setVisibility(View.VISIBLE);
+        // creating a new variable for our request queue
+        RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
+        // making a string request on below line.
+        StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                // channing progress bar visibility on below line.
+                loadingPB.setVisibility(View.GONE);
+                // setting response to text view.
+               // responseTV.setText("Response from the API is :" + response);
+                // displaying toast message.
+                Toast.makeText(MainActivity.this, "Data posted succesfully..", Toast.LENGTH_SHORT).show();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // handling error on below line.
+              //  loadingPB.setVisibility(View.GONE);
+             //   responseTV.setText(error.getMessage());
+                Toast.makeText(MainActivity.this, "Fail to get response.." + error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                // on below line we are passing our key
+                // and value pair to our parameters.
+                params.put("username", username);
+                params.put("password", password);
+                return params;
+            }
+        };
+        // adding request to queue to post the data.
+        queue.add(request);
     }
 
 

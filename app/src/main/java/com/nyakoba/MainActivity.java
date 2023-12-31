@@ -85,6 +85,9 @@ public class MainActivity extends AppCompatActivity {
                 // Handle the error
                 Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();//display the response on screen
 
+                Intent intent = new Intent(context, DashBoardActivity.class);
+                startActivity(intent);
+
             }
         });
     }

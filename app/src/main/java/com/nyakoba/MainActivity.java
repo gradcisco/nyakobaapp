@@ -60,25 +60,50 @@ public class MainActivity extends AppCompatActivity {
         loginRequest1.setUsername(username);
         loginRequest1.setPassword(password);
 
+        String postData = "{\n" +
+                "\"username\": \"Somi\",\n" +
+                "\"password\": \"twwter\"\n" +
+                "}";
 
-        try{
-            Toast.makeText(MainActivity.this, "1",Toast.LENGTH_SHORT).show();
-            RestTemplate restTemplate = new RestTemplate();
-            Toast.makeText(MainActivity.this, "2",Toast.LENGTH_SHORT).show();
-            restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-            // restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
-            String url = "https://webhook.site/a05a1418-856f-45d9-b577-2cfb2f16ab1a";
-            HttpHeaders headers = new HttpHeaders();
-            headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-            HttpEntity<LoginRequest> entity = new HttpEntity<LoginRequest>(loginRequest1 , headers);
-            String result = restTemplate.exchange(url, HttpMethod.POST , entity, String.class).getBody();
-            Toast.makeText(MainActivity.this, "result",Toast.LENGTH_SHORT).show();
 
-    }
 
-        catch(Exception ex){
-                Toast.makeText(MainActivity.this, "Error::" + ex.getMessage(),Toast.LENGTH_SHORT).show();
+
+        try {
+            URL url_ = new URL(url);
+            HttpURLConnection urlConnection = (HttpURLConnection) url_.openConnection();
+
+            // Set up the connection properties
+            urlConnection.setRequestMethod("POST");
+            urlConnection.setRequestProperty("Content-Type", "application/json");
+            urlConnection.setDoOutput(true);
+
+            // Write the data to the request
+            OutputStream outputStream = urlConnection.getOutputStream();
+            outputStream.write(postData.getBytes());
+            outputStream.flush();
+
+            // Get the response
+            BufferedReader reader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+            StringBuilder response = new StringBuilder();
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                response.append(line);
             }
+
+            // Close resources
+            reader.close();
+            outputStream.close();
+
+            Toast.makeText(MainActivity.this, response.toString() ,Toast.LENGTH_SHORT).show();
+
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            Toast.makeText(MainActivity.this, e.getMessage() ,Toast.LENGTH_SHORT).show();
+
+        }
 
     }
 

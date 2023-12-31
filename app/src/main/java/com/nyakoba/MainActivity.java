@@ -10,7 +10,6 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
-import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
@@ -46,7 +45,9 @@ public class MainActivity extends AppCompatActivity {
         loginRequest1.setPassword(password);
 
         try{
+            Toast.makeText(MainActivity.this, "1",Toast.LENGTH_SHORT).show();
             RestTemplate restTemplate = new RestTemplate();
+            Toast.makeText(MainActivity.this, "2",Toast.LENGTH_SHORT).show();
            // restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
            /* restTemplate.getMessageConverters().forEach(mc -> {
                 Toast.makeText(MainActivity.this, mc.getClass().toString(),Toast.LENGTH_SHORT).show();
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             HttpHeaders headers = new HttpHeaders();
             headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
             HttpEntity<LoginRequest> entity = new HttpEntity<LoginRequest>(loginRequest1 , headers);
+            Toast.makeText(MainActivity.this, "3",Toast.LENGTH_SHORT).show();
             String result = restTemplate.exchange(url, HttpMethod.POST , entity, String.class).getBody();
 
             Toast.makeText(MainActivity.this, "result",Toast.LENGTH_SHORT).show();

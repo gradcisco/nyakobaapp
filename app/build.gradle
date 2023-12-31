@@ -6,6 +6,17 @@ android {
     namespace 'com.nyakoba'
     compileSdk 33
 
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        // Add more exclusions or inclusions as needed
+    }
+
     defaultConfig {
         applicationId "com.nyakoba"
         minSdk 24
@@ -33,6 +44,9 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    // https://mvnrepository.com/artifact/org.springframework.android/spring-android-rest-template
+    implementation 'org.springframework.android:spring-android-rest-template:1.0.1.RELEASE'
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

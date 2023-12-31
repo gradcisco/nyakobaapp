@@ -10,6 +10,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
@@ -48,7 +49,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "1",Toast.LENGTH_SHORT).show();
             RestTemplate restTemplate = new RestTemplate();
             Toast.makeText(MainActivity.this, "2",Toast.LENGTH_SHORT).show();
-           // restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
+            restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+
+
+            // restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
            /* restTemplate.getMessageConverters().forEach(mc -> {
                 Toast.makeText(MainActivity.this, mc.getClass().toString(),Toast.LENGTH_SHORT).show();
             });*/

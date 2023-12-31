@@ -53,18 +53,23 @@ public class MainActivity extends AppCompatActivity {
                 "}";
 
         try {
+            Toast.makeText(MainActivity.this, "1",Toast.LENGTH_SHORT).show();
             URL url = new URL(apiUrl);
+            Toast.makeText(MainActivity.this, "2",Toast.LENGTH_SHORT).show();
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+            Toast.makeText(MainActivity.this, "3",Toast.LENGTH_SHORT).show();
 
             // Set up the connection properties
             urlConnection.setRequestMethod("POST");
             urlConnection.setRequestProperty("Content-Type", "application/json");
             urlConnection.setDoOutput(true);
 
+            Toast.makeText(MainActivity.this, "4",Toast.LENGTH_SHORT).show();
             // Write the data to the request
             OutputStream outputStream = urlConnection.getOutputStream();
             outputStream.write(postData.getBytes());
             outputStream.flush();
+            Toast.makeText(MainActivity.this, "5",Toast.LENGTH_SHORT).show();
 
             // Get the response
             BufferedReader reader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));

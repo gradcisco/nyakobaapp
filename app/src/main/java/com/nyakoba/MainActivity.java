@@ -12,6 +12,8 @@ import com.android.volley.*;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.nyakoba.model.LoginRequest;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -53,10 +55,41 @@ public class MainActivity extends AppCompatActivity {
 
     public void userLogin(View view){
 
-      //  getData();
+        Toast.makeText(getApplicationContext(), "Starting req", Toast.LENGTH_SHORT).show();//display the response on screen
 
-        postDataUsingVolley("Dennis" , "123");
+
+        //  getData();
+
+        // Example JSON data
+        JSONObject jsonData = new JSONObject();
+        try {
+            jsonData.put("key", "value");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        // Create a VolleyRequest instance
+        VolleyRequest volleyRequest = new VolleyRequest(this, url);
+
+        // Make a JSON request
+        volleyRequest.makeJsonObjectRequest(jsonData, new VolleyRequest.VolleyCallback() {
+            @Override
+            public void onSuccess(JSONObject response) {
+                // Handle the successful response
+                Toast.makeText(getApplicationContext(), response.toString(), Toast.LENGTH_SHORT).show();//display the response on screen
+
+                Log.d("VolleyResponse", response.toString());
+            }
+
+            @Override
+            public void onError(VolleyError error) {
+                // Handle the error
+                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();//display the response on screen
+
+            }
+        });
     }
+
 
     public void login(View view){
 

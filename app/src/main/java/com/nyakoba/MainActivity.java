@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
     private RequestQueue mRequestQueue;
     private StringRequest mStringRequest;
-   // private String url = "https://webhook.site/a05a1418-856f-45d9-b577-2cfb2f16ab1a";
-    private String url = "https://run.mocky.io/v3/85cf9aaf-aa4f-41bf-b10c-308f032f7ccc";
+    private String url = "https://webhook.site/a05a1418-856f-45d9-b577-2cfb2f16ab1a";
+    //private String url = "https://run.mocky.io/v3/85cf9aaf-aa4f-41bf-b10c-308f032f7ccc";
 
     private EditText editTextUsername, editTextPassword;
 
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Response :" + error.toString(), Toast.LENGTH_LONG).show();//display the response on screen
+                Toast.makeText(getApplicationContext(), "Response :" + error.toString(), Toast.LENGTH_SHORT).show();//display the response on screen
                 Log.i(TAG, "Error :" + error.toString());
             }
         });

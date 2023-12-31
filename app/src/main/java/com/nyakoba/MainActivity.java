@@ -46,79 +46,21 @@ public class MainActivity extends AppCompatActivity {
         loginRequest1.setUsername(username);
         loginRequest1.setPassword(password);
 
+        Toast.makeText(MainActivity.this, "1",Toast.LENGTH_SHORT).show();
+
+
         String apiUrl = "https://webhook.site/a05a1418-856f-45d9-b577-2cfb2f16ab1a";
         String postData = "{\n" +
                 "\"username\": \"Dennis\",\n" +
                 "\"password\": \"twwter\"\n" +
                 "}";
 
-        try {
-            Toast.makeText(MainActivity.this, "1",Toast.LENGTH_SHORT).show();
-            URL url = new URL(apiUrl);
-            Toast.makeText(MainActivity.this, "2",Toast.LENGTH_SHORT).show();
-            HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-            Toast.makeText(MainActivity.this, "3",Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, "1",Toast.LENGTH_SHORT).show();
 
-            // Set up the connection properties
-            urlConnection.setRequestMethod("POST");
-            urlConnection.setRequestProperty("Content-Type", "application/json");
-            urlConnection.setDoOutput(true);
+        new PostApiTask().execute(apiUrl, postData);
 
-            Toast.makeText(MainActivity.this, "4",Toast.LENGTH_SHORT).show();
-            // Write the data to the request
-            OutputStream outputStream = urlConnection.getOutputStream();
-            outputStream.write(postData.getBytes());
-            outputStream.flush();
-            Toast.makeText(MainActivity.this, "5",Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, "2",Toast.LENGTH_SHORT).show();
 
-            // Get the response
-            BufferedReader reader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-            StringBuilder response = new StringBuilder();
-            String line;
-
-            while ((line = reader.readLine()) != null) {
-                response.append(line);
-            }
-
-            // Close resources
-            reader.close();
-            outputStream.close();
-
-            //return response.toString();
-            System.out.println(response.toString());
-
-        } catch (IOException e) {
-            Toast.makeText(MainActivity.this, "Error::" + e.getMessage(),Toast.LENGTH_SHORT).show();
-            e.printStackTrace();
-           // return null;
-        }
-
-        /*try{
-            Toast.makeText(MainActivity.this, "1",Toast.LENGTH_SHORT).show();
-            RestTemplate restTemplate = new RestTemplate();
-            Toast.makeText(MainActivity.this, "2",Toast.LENGTH_SHORT).show();
-            restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-
-
-            // restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
-           *//* restTemplate.getMessageConverters().forEach(mc -> {
-                Toast.makeText(MainActivity.this, mc.getClass().toString(),Toast.LENGTH_SHORT).show();
-            });*//*
-            //Toast.makeText(MainActivity.this, "No converter",Toast.LENGTH_SHORT).show();
-
-            String url = "https://webhook.site/a05a1418-856f-45d9-b577-2cfb2f16ab1a";
-            HttpHeaders headers = new HttpHeaders();
-            headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-            HttpEntity<LoginRequest> entity = new HttpEntity<LoginRequest>(loginRequest1 , headers);
-            Toast.makeText(MainActivity.this, "3",Toast.LENGTH_SHORT).show();
-            String result = restTemplate.exchange(url, HttpMethod.POST , entity, String.class).getBody();
-
-            Toast.makeText(MainActivity.this, "result",Toast.LENGTH_SHORT).show();
-        }
-        catch(Exception ex){
-
-            Toast.makeText(MainActivity.this, "Error::" + ex.getMessage(),Toast.LENGTH_SHORT).show();
-        }*/
 
     }
 

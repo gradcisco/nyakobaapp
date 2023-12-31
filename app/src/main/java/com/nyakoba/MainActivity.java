@@ -1,10 +1,17 @@
 package com.nyakoba;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.nyakoba.model.LoginRequest;
 
 
@@ -16,7 +23,13 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Arrays;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 public class MainActivity extends AppCompatActivity {
+
+    private RequestQueue mRequestQueue;
+    private StringRequest mStringRequest;
+    private String url = "https://webhook.site/a05a1418-856f-45d9-b577-2cfb2f16ab1a";
 
     private EditText editTextUsername, editTextPassword;
 
@@ -24,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        getData();
     }
 
     public void login(View view){
@@ -62,6 +77,27 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(MainActivity.this, "2",Toast.LENGTH_SHORT).show();
 
 
+    }
+
+    private void getData() {
+        // RequestQueue initialized
+        mRequestQueue = Volley.newRequestQueue(this);
+
+        // String Request initialized
+        mStringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                Toast.makeText(getApplicationContext(), "Response :" + response.toString(), Toast.LENGTH_LONG).show();//display the response on screen
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.i(TAG, "Error :" + error.toString());
+            }
+        });
+
+        mRequestQueue.add(mStringRequest);
     }
 
 

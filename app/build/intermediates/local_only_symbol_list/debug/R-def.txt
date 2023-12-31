@@ -15,6 +15,8 @@ drawable location_icon
 drawable nyakobatea
 drawable password_icon
 drawable username_icon
+id username
+id userpassword
 layout activity_main
 mipmap ic_launcher
 mipmap ic_launcher_round

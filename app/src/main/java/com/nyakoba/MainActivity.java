@@ -1,5 +1,7 @@
 package com.nyakoba;
 
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -32,12 +34,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dashboard_main);
+        setContentView(R.layout.activity_main);
 
        // getData();
     }
 
     public void userLogin(View view){
+
+        final Context context = this;
 
         Toast.makeText(getApplicationContext(), "Starting req", Toast.LENGTH_SHORT).show();//display the response on screen
         editTextUsername = findViewById(R.id.username);
@@ -62,12 +66,18 @@ public class MainActivity extends AppCompatActivity {
 
         // Make a JSON request
         volleyRequest.makeJsonObjectRequest(jsonData, new VolleyRequest.VolleyCallback() {
+
+
             @Override
             public void onSuccess(JSONObject response) {
                 // Handle the successful response
                 Toast.makeText(getApplicationContext(), response.toString(), Toast.LENGTH_SHORT).show();//display the response on screen
 
                 Log.d("VolleyResponse", response.toString());
+
+
+                Intent intent = new Intent(context, DashBoardActivity.class);
+                startActivity(intent);
             }
 
             @Override

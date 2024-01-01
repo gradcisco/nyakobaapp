@@ -98,6 +98,8 @@ public class PrintActivity extends Activity {
     //private Pos pos;
     int IsWorking = 0;
 
+    ImageButton withdrawBt;
+
     PosApiHelper posApiHelper = PosApiHelper.getInstance();
 
     Intent mPrintServiceIntent;
@@ -105,18 +107,21 @@ public class PrintActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //无title
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        //全屏
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.dashboard_main);
+        setContentView(R.layout.dashboard_main_print);
 
-      // gb_test = (Button) findViewById(R.id.withdrawbtn);
+       withdrawBt = (ImageButton) findViewById(R.id.withdrawbtn);
+
+        withdrawBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Withdraw...", Toast.LENGTH_LONG).show();//display the response on screen
+
+            }
+        });
 
 
-        init_Gray();
+      //  init_Gray();
 
 
 

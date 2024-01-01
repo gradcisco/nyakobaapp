@@ -36,4 +36,10 @@ public class DashBoardActivity extends AppCompatActivity {
         setContentView(R.layout.dashboard_main);
     }
 
+    public void print(View view){
+        Toast.makeText(getApplicationContext(), "Withdraw...", Toast.LENGTH_LONG).show();//display the response on screen
+
+
+    }
+
 }

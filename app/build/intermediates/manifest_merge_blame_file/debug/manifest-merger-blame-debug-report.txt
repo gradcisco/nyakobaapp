@@ -11,11 +11,11 @@
 9-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml
 10    <!-- adding internet permission -->
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:33:5-66
-11-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:33:22-64
+11-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:35:5-66
+11-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:35:22-64
 12
 13    <application
-13-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:5:5-31:19
+13-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:5:5-33:19
 14        android:allowBackup="true"
 14-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:6:13-39
 15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"

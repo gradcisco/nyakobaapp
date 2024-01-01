@@ -61,8 +61,10 @@ public class MainActivity extends AppCompatActivity {
         }
 */
         try{
-            Intent intent = new Intent(context, DashBoardActivity.class);
+            Intent intent = new Intent(context, PrintActivity.class);
             startActivity(intent);
+          //  Toast.makeText(getApplicationContext(), "Changed...", Toast.LENGTH_LONG).show();//display the response on screen
+
         }
         catch (Exception ex){
             Toast.makeText(getApplicationContext(), ex.getMessage(), Toast.LENGTH_LONG).show();//display the response on screen

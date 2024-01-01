@@ -59,6 +59,7 @@ id view
 id withdrawbtn
 layout activity_main
 layout dashboard_main
+layout dashboard_main_print
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name

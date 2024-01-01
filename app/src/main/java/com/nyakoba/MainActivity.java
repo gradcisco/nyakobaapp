@@ -60,8 +60,15 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 */
-        Intent intent = new Intent(context, DashBoardActivity.class);
-        startActivity(intent);
+        try{
+            Intent intent = new Intent(context, PrintActivity.class);
+            startActivity(intent);
+        }
+        catch (Exception ex){
+            Toast.makeText(getApplicationContext(), ex.getMessage(), Toast.LENGTH_LONG).show();//display the response on screen
+
+        }
+
 
       /*  // Create a VolleyRequest instance
         VolleyRequest volleyRequest = new VolleyRequest(this, url);

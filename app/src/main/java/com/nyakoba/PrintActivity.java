@@ -395,6 +395,8 @@ public class PrintActivity extends Activity {
         }
 
         public void run() {
+            Toast.makeText(getApplicationContext(), "1...", Toast.LENGTH_LONG).show();//display the response on screen
+
             Log.d("Robert2", "Print_Thread[ run ] run() begin");
             Message msg = Message.obtain();
             Message msg1 = new Message();
@@ -417,6 +419,8 @@ public class PrintActivity extends Activity {
                 Log.e(tag, "PrintSetGray():" );
 
                 ret = posApiHelper.PrintCheckStatus();
+                Toast.makeText(getApplicationContext(), "2...", Toast.LENGTH_LONG).show();//display the response on screen
+
                 Log.e(tag, "PrintCheckStatus():" );
                 if (ret == -1) {
                     RESULT_CODE = -1;
@@ -506,6 +510,8 @@ public class PrintActivity extends Activity {
 
                     case PRINT_TEST:
                         Log.d("Robert2", "Lib_PrnStart ret START0 " );
+                        Toast.makeText(getApplicationContext(), "Withdraw...", Toast.LENGTH_LONG).show();//display the response on screen
+
                         SendMsg("PRINT_TEST");
                         msg.what = DISABLE_RG;
                         handler.sendMessage(msg);

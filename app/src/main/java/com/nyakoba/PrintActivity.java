@@ -201,21 +201,22 @@ public class PrintActivity extends Activity {
         }
 
         try{
+          //  PosApiHelper posApiHelpers = PosApiHelper.getInstance();
             Message msg = Message.obtain();
             Message msg1 = new Message();
             ret = posApiHelper.PrintCheckStatus();
             Toast.makeText(getApplicationContext(), "Starting Printer Status ==" + ret, Toast.LENGTH_SHORT).show();//display the response on screen
 
            // SendMsg("PRINT_TEST");
-            msg.what = DISABLE_RG;
-            handler.sendMessage(msg);
+            //msg.what = DISABLE_RG;
+            //handler.sendMessage(msg);
             posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
             posApiHelper.PrintStr("英语:Hello, Long time no see   ￡ ：2089.22\n");
 
           //  SendMsg("Printing... ");
             ret = posApiHelper.PrintStart();
 
-            Toast.makeText(getApplicationContext(), "Print state=" + ret, Toast.LENGTH_SHORT).show();//display the response on screen
+          //  Toast.makeText(getApplicationContext(), "Print state=" + ret, Toast.LENGTH_SHORT).show();//display the response on screen
 
            // msg1.what = ENABLE_RG;
            // handler.sendMessage(msg1);

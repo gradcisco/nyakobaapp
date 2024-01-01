@@ -60,7 +60,10 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        // Create a VolleyRequest instance
+        Intent intent = new Intent(context, PrintActivity.class);
+        startActivity(intent);
+
+      /*  // Create a VolleyRequest instance
         VolleyRequest volleyRequest = new VolleyRequest(this, url);
 
         // Make a JSON request
@@ -88,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
 
             }
-        });
+        });*/
     }
 
 

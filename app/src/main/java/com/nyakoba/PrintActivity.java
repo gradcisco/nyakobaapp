@@ -20,10 +20,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
+import android.widget.*;
 
 import com.ctk.sdk.PosApiHelper;
 import com.google.zxing.BarcodeFormat;
@@ -200,6 +197,8 @@ public class PrintActivity extends Activity {
     }
 
     public void onClickTest(View v) {
+        Toast.makeText(getApplicationContext(), "Starting Print", Toast.LENGTH_SHORT).show();//display the response on screen
+
         if (printThread != null && !printThread.isThreadFinished()) {
             Log.e(tag, "Thread is still running...");
             return;
@@ -217,6 +216,9 @@ public class PrintActivity extends Activity {
 
         printThread = new Print_Thread(PRINT_UNICODE);
         printThread.start();
+
+        Toast.makeText(getApplicationContext(), "Finished Print", Toast.LENGTH_SHORT).show();//display the response on screen
+
 
     }
 

@@ -1,0 +1,27 @@
+
+l
+java:S1192N"JDefine a constant instead of duplicating this literal "123456789" 4 times.(øÇ÷œûÿÿÿÿ8¾Ô÷ŸÌ1
+E
+java:S1604#"(Make this anonymous inner class a lambda(ÉãÃ®8¿Ô÷ŸÌ1
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(óÃ·²ıÿÿÿÿ8ßÔ÷ŸÌ1
+E
+java:S1185"(Remove this method to simply inherit it.(Î¢È8íÔ÷ŸÌ1
+]	java:S125'"<This block of commented-out lines of code should be removed.(Åë®«ûÿÿÿÿ8òÔ÷ŸÌ1
+]	java:S1254"<This block of commented-out lines of code should be removed.(¡»¢üùÿÿÿÿ8óÔ÷ŸÌ1
+]	java:S125B"<This block of commented-out lines of code should be removed.(ü·ÿÇşÿÿÿÿ8óÔ÷ŸÌ1
+X	java:S125K"<This block of commented-out lines of code should be removed.(åşõÔ8ôÔ÷ŸÌ1
+X	java:S125Y"<This block of commented-out lines of code should be removed.(‚­ü“8õÔ÷ŸÌ1
+]	java:S125^"<This block of commented-out lines of code should be removed.(èŞ·¯ùÿÿÿÿ8õÔ÷ŸÌ1
+]	java:S125d"<This block of commented-out lines of code should be removed.(èŞ·¯ùÿÿÿÿ8öÔ÷ŸÌ1
+X	java:S125l"<This block of commented-out lines of code should be removed.(ŒËë¿8öÔ÷ŸÌ1
+X	java:S125q"<This block of commented-out lines of code should be removed.(Ãì¥8÷Ô÷ŸÌ1
+X	java:S125u"<This block of commented-out lines of code should be removed.(³ŒÿÍ8÷Ô÷ŸÌ1
+]	java:S125w"<This block of commented-out lines of code should be removed.(†ÙõÒÿÿÿÿÿ8÷Ô÷ŸÌ1
+]	java:S125{"<This block of commented-out lines of code should be removed.(Í‡—‚øÿÿÿÿ8÷Ô÷ŸÌ1
+]	java:S125}"<This block of commented-out lines of code should be removed.(Ğ¬ä•şÿÿÿÿ8øÔ÷ŸÌ1
+]	java:S125"<This block of commented-out lines of code should be removed.(ò˜£’ıÿÿÿÿ8øÔ÷ŸÌ1
+Y	java:S125Š"<This block of commented-out lines of code should be removed.(ªæøÓ8øÔ÷ŸÌ1
+^	java:S125"<This block of commented-out lines of code should be removed.(“³ê’øÿÿÿÿ8øÔ÷ŸÌ1
+^	java:S125©"<This block of commented-out lines of code should be removed.(ŞëÓ³øÿÿÿÿ8ûÔ÷ŸÌ1
+]
+java:S1128";Remove this unused import 'com.google.zxing.BarcodeFormat'.(Â«Â¯ıÿÿÿÿ8ıÔ÷ŸÌ1

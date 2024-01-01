@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestPermission();
-        PosApiHelper.getInstance().SysLogSwitch(1);
+       // requestPermission();
+      //  PosApiHelper.getInstance().SysLogSwitch(1);
         setContentView(R.layout.activity_main);
 
     }
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         final Context context = this;
 
-        Toast.makeText(getApplicationContext(), "Starting req", Toast.LENGTH_SHORT).show();//display the response on screen
+        //Toast.makeText(getApplicationContext(), "Starting req", Toast.LENGTH_SHORT).show();//display the response on screen
         editTextUsername = findViewById(R.id.username);
         editTextPassword = findViewById(R.id.userpassword);
 

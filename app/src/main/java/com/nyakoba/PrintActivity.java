@@ -211,6 +211,7 @@ public class PrintActivity extends Activity {
 
         printThread = new Print_Thread(PRINT_TEST);
         printThread.start();
+        Toast.makeText(getApplicationContext(), "Finished Print", Toast.LENGTH_SHORT).show();
     }
 
     public void onClickUnicodeTest(View v) {

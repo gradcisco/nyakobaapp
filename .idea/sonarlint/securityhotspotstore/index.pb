@@ -11,3 +11,25 @@ Y
 )app/src/main/res/layout/activity_main.xml,7\6\76b07e40f24cce093536731477540f12e7da3cb6
 `
 0app/src/main/java/com/nyakoba/VolleyRequest.java,0\1\014fbd2582b5850212e52b8a056943d3b4326c99
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+X
+(gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+A
+gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4
+w
+Gapp/src/main/aidl/com/ciontek/ciontekposservice/ICiontekPosService.aidl,e\7\e762ac71add6b515c207be3576d0f87fb884a3d6
+@
+local.properties,0\7\0712df971a99ac4d2fccb8e0fb19f377f3374cca
+_
+/app/src/main/java/com/ctk/sdk/PosApiHelper.java,2\3\2376cb388dfd199fe04a94eb98c21b0494a3980f
+g
+7app/src/main/java/com/nyakoba/service/PrintService.java,f\1\f1eb50f64a33e358d127657e7c020221fd4a889b
+d
+4app/src/main/java/com/nyakoba/service/MyService.java,d\0\d0b6b558359afb2741a387984c5fe2f9ff3a9332
+b
+2app/src/main/java/com/nyakoba/MainActivityBkp.java,7\2\72c7ed6cec57ba382bada3891166a24c9dbc8717
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e

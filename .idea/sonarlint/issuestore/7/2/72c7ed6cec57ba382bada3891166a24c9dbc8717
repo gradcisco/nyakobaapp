@@ -1,0 +1,37 @@
+
+u
+java:S2293Á"YReplace the type specification in this constructor call with the diamond operator ("<>").(ô›Óíüÿÿÿÿ
+b
+java:S1192/"MDefine a constant instead of duplicating this literal "Starting req" 3 times.(®Ù
+?
+java:S1604"(Make this anonymous inner class a lambda(¦µÜ“
+D
+java:S1604–"(Make this anonymous inner class a lambda(´¸©”üÿÿÿÿ
+?
+java:S1604«"(Make this anonymous inner class a lambda(’ÀÈœ
+D
+java:S1604µ"(Make this anonymous inner class a lambda(´¸©”üÿÿÿÿ
+C
+java:S1659!".Declare "editTextPassword" on a separate line.(äÁï}
+w
+java:S1450"\Remove the "mRequestQueue" field and declare it as a local variable in the relevant methods.(–³·ğûÿÿÿÿ
+x
+java:S1450"]Remove the "mStringRequest" field and declare it as a local variable in the relevant methods.(ùŸë´úÿÿÿÿ
+Q	java:S125("<This block of commented-out lines of code should be removed.(¤åñ¼
+F
+java:S1172+"+Remove this unused method parameter "view".(–ªŠÒùÿÿÿÿ
+Q	java:S1256"<This block of commented-out lines of code should be removed.(¤åñ¼
+A
+java:S1172a"+Remove this unused method parameter "view".(½‹“¥
+V	java:S125q"<This block of commented-out lines of code should be removed.(¶ß‘şÿÿÿÿ
+K
+java:S1874‚"/Remove this use of "execute"; it is deprecated.(ú‘º¸ûÿÿÿÿ
+b
+java:S1858”"K"response" is already a string, there's no need to call "toString()" on it.(ÛÍî¦
+W	java:S125¥"<This block of commented-out lines of code should be removed.(–ºÛ§ûÿÿÿÿ
+W	java:S125¯"<This block of commented-out lines of code should be removed.(‚ÉŠºúÿÿÿÿ
+W	java:S125¹"<This block of commented-out lines of code should be removed.(‚ÉŠºúÿÿÿÿ
+C
+java:S1068"-Remove this unused "loadingPB" private field.(¥çò­
+O
+java:S1144¡"8Remove this unused private "postDataUsingVolley" method.(ÇÎûå

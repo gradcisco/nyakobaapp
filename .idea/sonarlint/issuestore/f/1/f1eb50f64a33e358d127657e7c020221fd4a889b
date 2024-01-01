@@ -1,0 +1,27 @@
+
+l
+java:S1192J"JDefine a constant instead of duplicating this literal "123456789" 4 times.(øÇ÷œûÿÿÿÿ8è‹»ŸÌ1
+E
+java:S1604"(Make this anonymous inner class a lambda(ÉãÃ®8ê‹»ŸÌ1
+u	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ôñ¶8…Œ»ŸÌ1
+E
+java:S1185"(Remove this method to simply inherit it.(Î¢È8Œ»ŸÌ1
+]	java:S125#"<This block of commented-out lines of code should be removed.(Åë®«ûÿÿÿÿ8“Œ»ŸÌ1
+]	java:S1250"<This block of commented-out lines of code should be removed.(¡»¢üùÿÿÿÿ8“Œ»ŸÌ1
+]	java:S125>"<This block of commented-out lines of code should be removed.(ü·ÿÇşÿÿÿÿ8”Œ»ŸÌ1
+X	java:S125G"<This block of commented-out lines of code should be removed.(åşõÔ8”Œ»ŸÌ1
+X	java:S125U"<This block of commented-out lines of code should be removed.(‚­ü“8–Œ»ŸÌ1
+]	java:S125Z"<This block of commented-out lines of code should be removed.(èŞ·¯ùÿÿÿÿ8–Œ»ŸÌ1
+]	java:S125`"<This block of commented-out lines of code should be removed.(èŞ·¯ùÿÿÿÿ8–Œ»ŸÌ1
+X	java:S125h"<This block of commented-out lines of code should be removed.(ŒËë¿8–Œ»ŸÌ1
+X	java:S125m"<This block of commented-out lines of code should be removed.(Ãì¥8–Œ»ŸÌ1
+X	java:S125q"<This block of commented-out lines of code should be removed.(³ŒÿÍ8–Œ»ŸÌ1
+]	java:S125s"<This block of commented-out lines of code should be removed.(†ÙõÒÿÿÿÿÿ8–Œ»ŸÌ1
+]	java:S125w"<This block of commented-out lines of code should be removed.(Í‡—‚øÿÿÿÿ8–Œ»ŸÌ1
+]	java:S125y"<This block of commented-out lines of code should be removed.(Ğ¬ä•şÿÿÿÿ8–Œ»ŸÌ1
+]	java:S125{"<This block of commented-out lines of code should be removed.(ò˜£’ıÿÿÿÿ8–Œ»ŸÌ1
+Y	java:S125†"<This block of commented-out lines of code should be removed.(ªæøÓ8–Œ»ŸÌ1
+^	java:S125‰"<This block of commented-out lines of code should be removed.(“³ê’øÿÿÿÿ8–Œ»ŸÌ1
+^	java:S125¥"<This block of commented-out lines of code should be removed.(ŞëÓ³øÿÿÿÿ8™Œ»ŸÌ1
+]
+java:S1128";Remove this unused import 'com.google.zxing.BarcodeFormat'.(Â«Â¯ıÿÿÿÿ8šŒ»ŸÌ1

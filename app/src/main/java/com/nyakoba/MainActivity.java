@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private StringRequest mStringRequest;
 
     private ProgressBar loadingPB;
-    private String url = "https://webhook.site/a05a1418-856f-45d9-b577-2cfb2f16ab1a";
+    private String url = "http://192.168.100.48:80/login";
 
     private EditText editTextUsername, editTextPassword;
 
@@ -71,27 +71,18 @@ public class MainActivity extends AppCompatActivity {
         //  getData();
 
         // Example JSON data
-      /*  JSONObject jsonData = new JSONObject();
+       JSONObject jsonData = new JSONObject();
         try {
             jsonData.put("username", username);
             jsonData.put("password", password);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-*/
-        try{
-            Intent intent = new Intent(context, PrintActivity.class);
-            startActivity(intent);
-          //  Toast.makeText(getApplicationContext(), "Changed...", Toast.LENGTH_LONG).show();//display the response on screen
-
-        }
-        catch (Exception ex){
-            Toast.makeText(getApplicationContext(), ex.getMessage(), Toast.LENGTH_LONG).show();//display the response on screen
-
-        }
 
 
-      /*  // Create a VolleyRequest instance
+
+
+        // Create a VolleyRequest instance
         VolleyRequest volleyRequest = new VolleyRequest(this, url);
 
         // Make a JSON request
@@ -105,21 +96,32 @@ public class MainActivity extends AppCompatActivity {
 
                 Log.d("VolleyResponse", response.toString());
 
+                try{
+                    Intent intent = new Intent(context, PrintActivity.class);
+                    startActivity(intent);
+                    //  Toast.makeText(getApplicationContext(), "Changed...", Toast.LENGTH_LONG).show();//display the response on screen
 
-                Intent intent = new Intent(context, DashBoardActivity.class);
-                startActivity(intent);
+                }
+                catch (Exception ex){
+                    Toast.makeText(getApplicationContext(), ex.getMessage(), Toast.LENGTH_LONG).show();//display the response on screen
+
+                }
+
+
+             //   Intent intent = new Intent(context, DashBoardActivity.class);
+              //  startActivity(intent);
             }
 
             @Override
             public void onError(VolleyError error) {
                 // Handle the error
-                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();//display the response on screen
+                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();//display the response on screen
 
                 Intent intent = new Intent(context, DashBoardActivity.class);
                 startActivity(intent);
 
             }
-        });*/
+        });
     }
 
 

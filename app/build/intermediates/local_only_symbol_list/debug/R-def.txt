@@ -26,7 +26,6 @@ drawable settings
 drawable username_icon
 drawable withdraw
 drawable write
-id backB
 id cardView
 id contributeCard
 id helpCard
@@ -58,7 +57,6 @@ id userpassword
 id view
 id withdrawbtn
 layout activity_main
-layout dashboard_main
 layout dashboard_main_print
 mipmap ic_launcher
 mipmap ic_launcher_round

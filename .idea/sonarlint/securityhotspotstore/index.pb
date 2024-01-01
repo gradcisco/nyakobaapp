@@ -9,8 +9,6 @@ e
 .app/src/main/java/com/nyakoba/PostApiTask.java,d\8\d8d5fe345cad22a609f651d771a72112cf378efc
 Y
 )app/src/main/res/layout/activity_main.xml,7\6\76b07e40f24cce093536731477540f12e7da3cb6
-`
-0app/src/main/java/com/nyakoba/VolleyRequest.java,0\1\014fbd2582b5850212e52b8a056943d3b4326c99
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 X
@@ -31,5 +29,3 @@ d
 4app/src/main/java/com/nyakoba/service/MyService.java,d\0\d0b6b558359afb2741a387984c5fe2f9ff3a9332
 b
 2app/src/main/java/com/nyakoba/MainActivityBkp.java,7\2\72c7ed6cec57ba382bada3891166a24c9dbc8717
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e

@@ -31,9 +31,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.nyakoba.DashBoardActivity"
-            android:exported="true" />
-        <activity
             android:name="com.nyakoba.PrintActivity"
             android:exported="true" />
 

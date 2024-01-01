@@ -19,7 +19,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-            android:id="@+id/backB"
+            android:id="@+id/withdrawbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -27,6 +27,7 @@
             android:background="?attr/selectableItemBackground"
             android:padding="8dp"
             android:src="@drawable/ic_back"
+            android:onClick="onClickTest"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

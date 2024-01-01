@@ -56,6 +56,7 @@ id textView4
 id username
 id userpassword
 id view
+id withdrawbtn
 layout activity_main
 layout dashboard_main
 mipmap ic_launcher

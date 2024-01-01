@@ -34,9 +34,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dashboard_main);
+        setContentView(R.layout.activity_main);
 
-       // getData();
     }
 
     public void userLogin(View view){
@@ -93,113 +92,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void login(View view){
-
-        getData();
-
-        editTextUsername = findViewById(R.id.username);
-        editTextPassword = findViewById(R.id.userpassword);
-
-        String username = editTextUsername.getText().toString();
-        String password = editTextPassword.getText().toString();
-        Toast.makeText(MainActivity.this, "Hello there Username = " + username + " and password = " + password,Toast.LENGTH_SHORT).show();
-
-
-        /*LoginRequest loginRequest = LoginRequest
-                .builder()
-                .username(username)
-                .password(password)
-                .build();*/
-
-        LoginRequest loginRequest1 = new LoginRequest();
-        loginRequest1.setUsername(username);
-        loginRequest1.setPassword(password);
-
-        Toast.makeText(MainActivity.this, "1",Toast.LENGTH_SHORT).show();
-
-
-        String apiUrl = "https://webhook.site/a05a1418-856f-45d9-b577-2cfb2f16ab1a";
-        String postData = "{\n" +
-                "\"username\": \"Somi\",\n" +
-                "\"password\": \"twwter\"\n" +
-                "}";
-
-        Toast.makeText(MainActivity.this, "1",Toast.LENGTH_SHORT).show();
-
-        new PostApiTask().execute(apiUrl, postData);
-
-        Toast.makeText(MainActivity.this, "2",Toast.LENGTH_SHORT).show();
-
-
-    }
-
-    private void getData() {
-
-        Toast.makeText(getApplicationContext(), "Starting req", Toast.LENGTH_SHORT).show();//display the response on screen
-        // RequestQueue initialized
-        mRequestQueue = Volley.newRequestQueue(this);
-
-        // String Request initialized
-        mStringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-
-                Toast.makeText(getApplicationContext(), "Response :" + response.toString(), Toast.LENGTH_LONG).show();//display the response on screen
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Response :" + error.toString(), Toast.LENGTH_SHORT).show();//display the response on screen
-                Log.i(TAG, "Error :" + error.toString());
-            }
-        });
-
-        mRequestQueue.add(mStringRequest);
-    }
-
-    private void postDataUsingVolley(String username, String password) {
-        Toast.makeText(getApplicationContext(), "Starting req", Toast.LENGTH_SHORT).show();//display the response on screen
-
-        // on below line specifying the url at which we have to make a post request
-       // String url = "https://reqres.in/api/users";
-        // setting progress bar visibility on below line.
-        //loadingPB.setVisibility(View.VISIBLE);
-        // creating a new variable for our request queue
-        RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
-        // making a string request on below line.
-        StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                // channing progress bar visibility on below line.
-              //  loadingPB.setVisibility(View.GONE);
-                // setting response to text view.
-               // responseTV.setText("Response from the API is :" + response);
-                // displaying toast message.
-                Toast.makeText(MainActivity.this, "Data posted succesfully..", Toast.LENGTH_SHORT).show();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                // handling error on below line.
-              //  loadingPB.setVisibility(View.GONE);
-             //   responseTV.setText(error.getMessage());
-                Toast.makeText(MainActivity.this, "Fail to get response.." + error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        }) {
-            @Nullable
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
-                // on below line we are passing our key
-                // and value pair to our parameters.
-                params.put("username", username);
-                params.put("password", password);
-                return params;
-            }
-        };
-        // adding request to queue to post the data.
-        queue.add(request);
-    }
 
 
 

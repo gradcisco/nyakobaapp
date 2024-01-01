@@ -3,24 +3,24 @@
 3    package="com.nyakoba.test" >
 4
 5    <uses-sdk
-5-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest18173839093120144934.xml:5:5-74
+5-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10564343397990593746.xml:5:5-74
 6        android:minSdkVersion="24"
-6-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest18173839093120144934.xml:5:15-41
+6-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10564343397990593746.xml:5:15-41
 7        android:targetSdkVersion="33" />
-7-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest18173839093120144934.xml:5:42-71
+7-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10564343397990593746.xml:5:42-71
 8
 9    <instrumentation
-9-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest18173839093120144934.xml:11:5-15:61
+9-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10564343397990593746.xml:11:5-15:61
 10        android:name="androidx.test.runner.AndroidJUnitRunner"
-10-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest18173839093120144934.xml:11:22-76
+10-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10564343397990593746.xml:11:22-76
 11        android:functionalTest="false"
-11-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest18173839093120144934.xml:14:22-52
+11-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10564343397990593746.xml:14:22-52
 12        android:handleProfiling="false"
-12-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest18173839093120144934.xml:13:22-53
+12-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10564343397990593746.xml:13:22-53
 13        android:label="Tests for com.nyakoba"
-13-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest18173839093120144934.xml:15:22-59
+13-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10564343397990593746.xml:15:22-59
 14        android:targetPackage="com.nyakoba" />
-14-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest18173839093120144934.xml:12:22-57
+14-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10564343397990593746.xml:12:22-57
 15
 16    <uses-permission android:name="android.permission.REORDER_TASKS" />
 16-->[androidx.test:core:1.4.0] C:\Users\dmutegi\.gradle\caches\transforms-3\f43e651c8d8fb330fb49c5a531d66ef0\transformed\core-1.4.0\AndroidManifest.xml:24:5-72
@@ -40,12 +40,12 @@
 22    </queries>
 23
 24    <application
-24-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest18173839093120144934.xml:7:5-9:19
+24-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10564343397990593746.xml:7:5-9:19
 25        android:debuggable="true"
 26        android:extractNativeLibs="false" >
 27        <uses-library android:name="android.test.runner" />
-27-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest18173839093120144934.xml:8:9-60
-27-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest18173839093120144934.xml:8:23-57
+27-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10564343397990593746.xml:8:9-60
+27-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest10564343397990593746.xml:8:23-57
 28
 29        <activity
 29-->[androidx.test:core:1.4.0] C:\Users\dmutegi\.gradle\caches\transforms-3\f43e651c8d8fb330fb49c5a531d66ef0\transformed\core-1.4.0\AndroidManifest.xml:27:9-34:20

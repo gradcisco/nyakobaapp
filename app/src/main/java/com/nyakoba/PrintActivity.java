@@ -98,7 +98,6 @@ public class PrintActivity extends Activity {
     //private Pos pos;
     int IsWorking = 0;
 
-    ImageButton withdrawBt;
 
     PosApiHelper posApiHelper = PosApiHelper.getInstance();
 
@@ -110,15 +109,7 @@ public class PrintActivity extends Activity {
 
         setContentView(R.layout.dashboard_main_print);
 
-       withdrawBt = (ImageButton) findViewById(R.id.withdrawbtn);
 
-        withdrawBt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Withdraw...", Toast.LENGTH_LONG).show();//display the response on screen
-
-            }
-        });
 
 
       //  init_Gray();
@@ -209,8 +200,8 @@ public class PrintActivity extends Activity {
             return;
         }
 
-        printThread = new Print_Thread(PRINT_TEST);
-        printThread.start();
+     //   printThread = new Print_Thread(PRINT_TEST);
+      //  printThread.start();
         Toast.makeText(getApplicationContext(), "Finished Print", Toast.LENGTH_SHORT).show();
     }
 
@@ -296,55 +287,13 @@ public class PrintActivity extends Activity {
         printThread.start();
     }
 
-    public void onClickLong(View v) {
 
-        if (printThread != null && !printThread.isThreadFinished()) {
-            Log.e(tag, "Thread is still running...");
-            return;
-        }
-        printThread = new Print_Thread(PRINT_LONGER);
-        printThread.start();
-    }
 
-    public void onClick_single(View v) {
-        if (printThread != null && !printThread.isThreadFinished()) {
-            Log.e(tag, "Thread is still running...");
-            return;
-        }
 
-        printThread = new Print_Thread(PRINT_LAB_SINGLE);
-        printThread.start();
-    }
 
-    public void onClick_continue(View v) {
-        if (printThread != null && !printThread.isThreadFinished()) {
-            Log.e(tag, "Thread is still running...");
-            return;
-        }
 
-        printThread = new Print_Thread(PRINT_LAB_CONTINUE);
-        printThread.start();
-    }
 
-    public void onClick_barcode(View v) {
-        if (printThread != null && !printThread.isThreadFinished()) {
-            Log.e(tag, "Thread is still running...");
-            return;
-        }
 
-        printThread = new Print_Thread(PRINT_LAB_BAR);
-        printThread.start();
-    }
-
-    public void onClick_bitmap(View v) {
-        if (printThread != null && !printThread.isThreadFinished()) {
-            Log.e(tag, "Thread is still running...");
-            return;
-        }
-
-        printThread = new Print_Thread(PRINT_LAB_BIT);
-        printThread.start();
-    }
 
     public void QuitHandler() {
         is_cycle = false;
@@ -395,7 +344,7 @@ public class PrintActivity extends Activity {
         }
 
         public void run() {
-            
+
             Log.d("Robert2", "Print_Thread[ run ] run() begin");
             Message msg = Message.obtain();
             Message msg1 = new Message();
@@ -447,63 +396,7 @@ public class PrintActivity extends Activity {
                 Log.d("Robert2", "Lib_PrnStart type= "+type );
                 switch (type) {
 
-                    case PRINT_LONGER:
-                        SendMsg("PRINT LONG");
 
-                        msg.what = DISABLE_RG;
-                        handler.sendMessage(msg);
-
-                        String stringg = " a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?";
-
-                        posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
-                        posApiHelper.PrintStr("a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >? a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >? a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?\n");
-//						ret = Print.Lib_PrnStr(" a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?a b c d e f g h i j k l m n o p q r s t u v w x z A B C D E F G H I J K L M N O P Q R S T U V W X Z 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & * () _ + ~   [ ] , . / ; ' { } : : | < >?");
-                        posApiHelper.PrintBarcode(content, 360, 120, "CODE_128");
-                        posApiHelper.PrintStr("CODE_128 : " + content + "\n\n");
-                        posApiHelper.PrintBarcode(content, 240, 240, "QR_CODE");
-                        posApiHelper.PrintStr("QR_CODE : " + content + "\n\n");
-                        posApiHelper.PrintStr("发卡行(ISSUER):01020001 工商银行\n");
-                        posApiHelper.PrintStr("卡号(CARD NO):\n");
-                        posApiHelper.PrintStr("    9558803602109503920\n");
-                        posApiHelper.PrintStr("收单行(ACQUIRER):03050011民生银行\n");
-                        posApiHelper.PrintStr("交易类型(TXN. TYPE):消费/SALE\n");
-                        posApiHelper.PrintStr("卡有效期(EXP. DATE):2013/08\n");
-                        posApiHelper.PrintStr("- - - - - - - - - - - - - - - -\n");
-                        posApiHelper.PrintStr("                                         ");
-                        posApiHelper.PrintStr("\n");
-                        posApiHelper.PrintStr("\n");
-                        posApiHelper.PrintStr("\n");
-
-                        SendMsg("Printing... ");
-                        final long starttime_long = System.currentTimeMillis();
-                        ret = posApiHelper.PrintStart();
-                        Log.e(tag, "PrintStart ret = " + ret);
-
-                        msg1.what = ENABLE_RG;
-
-                        handler.sendMessage(msg1);
-
-                        if (ret != 0) {
-                            RESULT_CODE = -1;
-                            Log.e("liuhao", "Lib_PrnStart fail, ret = " + ret);
-                            if (ret == -1) {
-                                SendMsg("No Print Paper ");
-                            } else if(ret == -2) {
-                                SendMsg("too hot ");
-                            }else if(ret == -3) {
-                                SendMsg("low voltage ");
-                            }else{
-                                SendMsg("Print fail ");
-                            }
-                        } else {
-                            RESULT_CODE = 0;
-                            SendMsg("Print Finish ");
-
-                            final long endttime_long = System.currentTimeMillis();
-                            final long totaltime_long = starttime_long - endttime_long;
-                            SendMsg("Print finish " );
-                        }
-                        break;
 
                     case PRINT_TEST:
                         Log.d("Robert2", "Lib_PrnStart ret START0 " );
@@ -552,176 +445,8 @@ public class PrintActivity extends Activity {
                         break;
 
 
-                    case PRINT_CYCLE:
-
-                        msg.what = DISABLE_RG;
-                        handler.sendMessage(msg);
-
-                        posApiHelper.PrintSetFont((byte) 16, (byte) 16, (byte) 0x33);
-                        for (int i = 1; i < 3; i++) {
-                            posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x33);
-                            posApiHelper.PrintStr("打印第：" + i + "次\n");
-                            posApiHelper.PrintStr("商户存根MERCHANT COPY\n");
-                            posApiHelper.PrintStr("- - - - - - - - - - - - - - - - - - - - - - - -\n");
-                            posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
-                            posApiHelper.PrintStr("商户名称(MERCHANT NAME):\n");
-                            posApiHelper.PrintStr("中国银联直连测试\n");
-                            posApiHelper.PrintStr("商户编号(MERCHANT NO):\n");
-                            posApiHelper.PrintStr("    001420183990573\n");
-                            posApiHelper.PrintStr("终端编号(TERMINAL NO):00026715\n");
-                            posApiHelper.PrintStr("操作员号(OPERATOR NO):12345678\n");
-                            posApiHelper.PrintStr("- - - - - - - - - - - - - - - -\n");
-                            //	posApiHelper.PrintStr("\n");
-                            posApiHelper.PrintStr("发卡行(ISSUER):01020001 工商银行\n");
-                            posApiHelper.PrintStr("卡号(CARD NO):\n");
-                            posApiHelper.PrintStr("    9558803602109503920\n");
-                            posApiHelper.PrintStr("收单行(ACQUIRER):03050011民生银行\n");
-                            posApiHelper.PrintStr("交易类型(TXN. TYPE):消费/SALE\n");
-                            posApiHelper.PrintStr("卡有效期(EXP. DATE):2013/08\n");
-                            posApiHelper.PrintStr("- - - - - - - - - - - - - - - -\n");
-                            //	posApiHelper.PrintStr("\n");
-                            posApiHelper.PrintStr("批次号(BATCH NO)  :000023\n");
-                            posApiHelper.PrintStr("凭证号(VOUCHER NO):000018\n");
-                            posApiHelper.PrintStr("授权号(AUTH NO)   :987654\n");
-                            posApiHelper.PrintStr("日期/时间(DATE/TIME):\n");
-                            posApiHelper.PrintStr("    2008/01/28 16:46:32\n");
-                            posApiHelper.PrintStr("交易参考号(REF. NO):200801280015\n");
-                            posApiHelper.PrintStr("金额(AMOUNT):  RMB:2.55\n");
-                            posApiHelper.PrintStr("- - - - - - - - - - - - - - - -\n");
-                            //	posApiHelper.PrintStr("\n");
-                            posApiHelper.PrintStr("备注/REFERENCE\n");
-                            posApiHelper.PrintStr("- - - - - - - - - - - - - - - -\n");
-                            posApiHelper.PrintSetFont((byte) 16, (byte) 16, (byte) 0x00);
-                            posApiHelper.PrintStr("持卡人签名(CARDHOLDER SIGNATURE)\n");
-                            posApiHelper.PrintStr("\n");
-                            posApiHelper.PrintStr("- - - - - - - - - - - - - - - - - - - - - - - -\n");
-                            //	posApiHelper.PrintStr("\n");
-                            posApiHelper.PrintStr("  本人确认以上交易，同意将其计入本卡帐户\n");
-                            posApiHelper.PrintStr("  I ACKNOWLEDGE SATISFACTORY RECEIPT\n");
-                            posApiHelper.PrintStr("\n\n\n\n\n\n\n\n\n\n");
-
-                            //  ret = posApiHelper.PrintCtnStart();
-                            ret = posApiHelper.PrintStart();
-                            // if (ret != 0) break;
-                        }
-
-                        msg1.what = ENABLE_RG;
-                        handler.sendMessage(msg1);
-                        Log.d("", "Lib_PrnStart ret = " + ret);
-                        if (ret != 0) {
-                            RESULT_CODE = -1;
-                            Log.e("liuhao", "Lib_PrnStart fail, ret = " + ret);
-                            if (ret == -1) {
-                                SendMsg("No Print Paper ");
-                            } else if(ret == -2) {
-                                SendMsg("too hot ");
-                            }else if(ret == -3) {
-                                SendMsg("low voltage ");
-                            }
-                        } else {
-                            RESULT_CODE = 0;
-                        }
 
 
-                        break;
-
-                    case PRINT_UNICODE:
-                        Log.d("Robert2", "Lib_PrnStart ret START11 " );
-                        final long starttime = System.currentTimeMillis();
-                        Log.e("Robert2", "PRINT_UNICODE starttime = " + starttime);
-
-                        SendMsg("PRINT_UNICODE");
-                        msg.what = DISABLE_RG;
-                        handler.sendMessage(msg);
-                        posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
-
-                        posApiHelper.PrintStr("中文:你好，好久不见。\n");
-                        posApiHelper.PrintStr("英语: ￡20.00 ，￡20.00 ，￡20.00 Hello, Long time no see\n");
-                        posApiHelper.PrintStr("西班牙语:España, ¡Hola! Cuánto tiempo sin verte!\n");
-                        posApiHelper.PrintStr("法语:Bonjour! Ça fait longtemps!\n");
-                        posApiHelper.PrintStr("Italian :Ciao, non CI vediamo da Molto Tempo.\n");
-
-
-                        SendMsg("Printing... ");
-                        //ret = posApiHelper.PrintCtnStart();
-                        ret = posApiHelper.PrintStart();
-
-                        posApiHelper.PrintSetFont((byte) 16, (byte) 16, (byte) 0x33);
-                        for (int i = 1; i < 3; i++) {
-                            posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x33);
-                            posApiHelper.PrintStr("打印第：" + i + "次\n");
-                            posApiHelper.PrintStr("商户存根MERCHANT COPY\n");
-                            posApiHelper.PrintStr("- - - - - - - - - - - - - - - - - - - - - - - -\n");
-                            posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
-                            posApiHelper.PrintStr("商户名称(MERCHANT NAME):\n");
-                            posApiHelper.PrintStr("中国银联直连测试\n");
-                            posApiHelper.PrintStr("商户编号(MERCHANT NO):\n");
-                            posApiHelper.PrintStr("    001420183990573\n");
-                            posApiHelper.PrintStr("终端编号(TERMINAL NO):00026715\n");
-                            posApiHelper.PrintStr("操作员号(OPERATOR NO):12345678\n");
-                            posApiHelper.PrintStr("- - - - - - - - - - - - - - - -\n");
-                            //	posApiHelper.PrintStr("\n");
-                            posApiHelper.PrintStr("发卡行(ISSUER):01020001 工商银行\n");
-                            posApiHelper.PrintStr("卡号(CARD NO):\n");
-                            posApiHelper.PrintStr("    9558803602109503920\n");
-                            posApiHelper.PrintStr("收单行(ACQUIRER):03050011民生银行\n");
-                            posApiHelper.PrintStr("交易类型(TXN. TYPE):消费/SALE\n");
-                            posApiHelper.PrintStr("卡有效期(EXP. DATE):2013/08\n");
-                            posApiHelper.PrintStr("- - - - - - - - - - - - - - - -\n");
-                            //	posApiHelper.PrintStr("\n");
-                            posApiHelper.PrintStr("批次号(BATCH NO)  :000023\n");
-                            posApiHelper.PrintStr("凭证号(VOUCHER NO):000018\n");
-                            posApiHelper.PrintStr("授权号(AUTH NO)   :987654\n");
-                            posApiHelper.PrintStr("日期/时间(DATE/TIME):\n");
-                            posApiHelper.PrintStr("    2008/01/28 16:46:32\n");
-                            posApiHelper.PrintStr("交易参考号(REF. NO):200801280015\n");
-                            posApiHelper.PrintStr("金额(AMOUNT):  RMB:2.55\n");
-                            posApiHelper.PrintStr("- - - - - - - - - - - - - - - -\n");
-                            //	posApiHelper.PrintStr("\n");
-                            posApiHelper.PrintStr("备注/REFERENCE\n");
-                            posApiHelper.PrintStr("- - - - - - - - - - - - - - - -\n");
-                            posApiHelper.PrintSetFont((byte) 16, (byte) 16, (byte) 0x00);
-                            posApiHelper.PrintStr("持卡人签名(CARDHOLDER SIGNATURE)\n");
-                            posApiHelper.PrintStr("\n");
-                            posApiHelper.PrintStr("- - - - - - - - - - - - - - - - - - - - - - - -\n");
-                            //	posApiHelper.PrintStr("\n");
-                            posApiHelper.PrintStr("  本人确认以上交易，同意将其计入本卡帐户\n");
-                            posApiHelper.PrintStr("  I ACKNOWLEDGE SATISFACTORY RECEIPT\n");
-                            posApiHelper.PrintStr("\n\n\n\n\n\n\n\n\n\n");
-
-                            //  ret = posApiHelper.PrintCtnStart();
-                            ret = posApiHelper.PrintStart();
-                            // if (ret != 0) break;
-                        }
-
-                        msg1.what = ENABLE_RG;
-                        handler.sendMessage(msg1);
-                        Log.d("", "Lib_PrnStart ret = " + ret);
-                        if (ret != 0) {
-                            RESULT_CODE = -1;
-                            Log.e("liuhao", "Lib_PrnStart fail, ret = " + ret);
-                            if (ret == -1) {
-                                SendMsg("No Print Paper ");
-                            } else if(ret == -2) {
-                                SendMsg("too hot ");
-                            }else if(ret == -3) {
-                                SendMsg("low voltage ");
-                            }else{
-                                SendMsg("Print fail ");
-                            }
-                        } else {
-                            RESULT_CODE = 0;
-                            SendMsg("Print Finish ");
-
-                            final long endttime = System.currentTimeMillis();
-                            Log.e("printtime", "PRINT_UNICODE endttime = " + endttime);
-                            final long totaltime = starttime - endttime;
-                            //SendMsg("Print Finish totaltime" + totaltime);
-                            SendMsg("Print finish" );
-                        }
-
-                        //ret = posApiHelper.PrintClose();
-                        break;
 
                     case PRINT_OPEN:
                         SendMsg("PRINT_OPEN");
@@ -758,78 +483,6 @@ public class PrintActivity extends Activity {
 
 
 
-                    case PRINT_LAB_CONTINUE:
-                        int j = 0;
-                        SendMsg("continue");
-                        msg.what = DISABLE_RG;
-                        handler.sendMessage(msg);
-                        SendMsg("Print continue... ");
-                        for(j = 0; j <3; j++)
-                        {
-                            posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
-                            posApiHelper.PrintStr("Shopping");
-                            posApiHelper.PrintStr("amount:00 dollars");
-                            posApiHelper.PrintStr("weight:00 kg");
-                            posApiHelper.PrintStr("the unit price:00");
-                            posApiHelper.PrintStr("time...  day...");
-                            posApiHelper.PrintStr("Have a nice day\n");
-                            posApiHelper.PrintStr("中文:你好，好久不见。");
-                            posApiHelper.PrintStr("中文:你好，好久不见。");
-                            // ret =  posApiHelper.PrintCtnStart();
-                            ret = posApiHelper.PrintStart();
-                        }
-
-                        msg1.what = ENABLE_RG;
-                        handler.sendMessage(msg1);
-
-                        Log.d("", "Lib_PrnStart ret = " + ret);
-                        if (ret != 0) {
-                            RESULT_CODE = -1;
-
-                            if (ret == -1) {
-                                SendMsg("No Print Paper ");
-                            } else if (ret == -2) {
-                                SendMsg("too hot ");
-                            } else if (ret == -3) {
-                                SendMsg("low voltage ");
-                            } else {
-                                SendMsg("Print fail ");
-                            }
-                        } else {
-                            RESULT_CODE = 0;
-                            SendMsg("Print Finish ");
-                        }
-                        break;
-
-                    case PRINT_LAB_BAR:
-                        msg.what = DISABLE_RG;
-                        handler.sendMessage(msg);
-                        content = "www.baidu.com/123456789123456789123456789";
-                        posApiHelper.PrintQrCode_Cut(content, 200, 200, "QR_CODE");
-                        SendMsg("Printing... ");
-                        //ret = posApiHelper.PrintCtnStart();
-                        ret = posApiHelper.PrintStart();
-                        msg1.what = ENABLE_RG;
-                        handler.sendMessage(msg1);
-
-                        Log.d("", "Lib_PrnStart ret = " + ret);
-                        if (ret != 0) {
-                            RESULT_CODE = -1;
-
-                            if (ret == -1) {
-                                SendMsg("No Print Paper ");
-                            } else if (ret == -2) {
-                                SendMsg("too hot ");
-                            } else if (ret == -3) {
-                                SendMsg("low voltage ");
-                            } else {
-                                SendMsg("Print fail ");
-                            }
-                        } else {
-                            RESULT_CODE = 0;
-                            SendMsg("Print Finish ");
-                        }
-                        break;
 
                     default:
                         break;

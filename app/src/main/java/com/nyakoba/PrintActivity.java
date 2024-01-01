@@ -200,6 +200,18 @@ public class PrintActivity extends Activity {
             return;
         }
 
+        try{
+            ret = posApiHelper.PrintCheckStatus();
+            Toast.makeText(getApplicationContext(), "Starting Print==" + ret, Toast.LENGTH_SHORT).show();//display the response on screen
+
+        }
+        catch (Exception ex){
+            Toast.makeText(getApplicationContext(), "Error = " + ex.getMessage(), Toast.LENGTH_SHORT).show();//display the response on screen
+
+        }
+
+
+
      //   printThread = new Print_Thread(PRINT_TEST);
       //  printThread.start();
         Toast.makeText(getApplicationContext(), "Finished Print", Toast.LENGTH_SHORT).show();

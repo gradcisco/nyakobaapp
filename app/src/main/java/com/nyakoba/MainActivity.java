@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         }
 */
         try{
-            Intent intent = new Intent(context, PrintActivity.class);
+            Intent intent = new Intent(context, DashBoardActivity.class);
             startActivity(intent);
         }
         catch (Exception ex){

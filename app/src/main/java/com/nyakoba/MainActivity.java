@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 */
-        Intent intent = new Intent(context, PrintActivity.class);
+        Intent intent = new Intent(context, DashBoardActivity.class);
         startActivity(intent);
 
       /*  // Create a VolleyRequest instance

@@ -20,7 +20,8 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Nyakoba" >
+        android:theme="@style/Theme.Nyakoba"
+        android:usesCleartextTraffic="true" >
         <activity
             android:name="com.nyakoba.MainActivity"
             android:exported="true" >

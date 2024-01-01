@@ -91,15 +91,20 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onSuccess(JSONObject response) {
-                // Handle the successful response
-                Toast.makeText(getApplicationContext(), response.toString(), Toast.LENGTH_SHORT).show();//display the response on screen
-
-                Log.d("VolleyResponse", response.toString());
-
                 try{
-                    Intent intent = new Intent(context, PrintActivity.class);
-                    startActivity(intent);
-                    //  Toast.makeText(getApplicationContext(), "Changed...", Toast.LENGTH_LONG).show();//display the response on screen
+                    JSONObject jsonObject = new JSONObject(response.toString());
+                    String status = jsonObject.get("status").toString();
+
+                    Log.d("VolleyResponse", response.toString());
+
+                    if(status.equalsIgnoreCase("000")){
+                        Intent intent = new Intent(context, PrintActivity.class);
+                        startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(), "Please enter correct username and Password", Toast.LENGTH_LONG).show();
+                    }
+
 
                 }
                 catch (Exception ex){

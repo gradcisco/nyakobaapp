@@ -52,14 +52,14 @@ public class MainActivity extends AppCompatActivity {
         //  getData();
 
         // Example JSON data
-        JSONObject jsonData = new JSONObject();
+      /*  JSONObject jsonData = new JSONObject();
         try {
             jsonData.put("username", username);
             jsonData.put("password", password);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
+*/
         Intent intent = new Intent(context, PrintActivity.class);
         startActivity(intent);
 

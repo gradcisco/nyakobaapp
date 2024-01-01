@@ -444,7 +444,6 @@ public class PrintActivity extends Activity {
 
 
                 Log.d("Robert2", "Lib_PrnStart type= "+type );
-
                 switch (type) {
 
                     case PRINT_LONGER:
@@ -506,7 +505,6 @@ public class PrintActivity extends Activity {
                         break;
 
                     case PRINT_TEST:
-                        Toast.makeText(getApplicationContext(), "1", Toast.LENGTH_LONG).show();
                         Log.d("Robert2", "Lib_PrnStart ret START0 " );
                         SendMsg("PRINT_TEST");
                         msg.what = DISABLE_RG;
@@ -532,8 +530,6 @@ public class PrintActivity extends Activity {
                         handler.sendMessage(msg1);
 
                         Log.d("Robert2", "Lib_PrnStart ret = " + ret);
-
-                        Toast.makeText(getApplicationContext(), "Result..." + ret, Toast.LENGTH_LONG).show();
 
                         if (ret != 0) {
                             RESULT_CODE = -1;

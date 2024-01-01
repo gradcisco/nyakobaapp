@@ -21,8 +21,6 @@ w
 Gapp/src/main/aidl/com/ciontek/ciontekposservice/ICiontekPosService.aidl,e\7\e762ac71add6b515c207be3576d0f87fb884a3d6
 @
 local.properties,0\7\0712df971a99ac4d2fccb8e0fb19f377f3374cca
-_
-/app/src/main/java/com/ctk/sdk/PosApiHelper.java,2\3\2376cb388dfd199fe04a94eb98c21b0494a3980f
 g
 7app/src/main/java/com/nyakoba/service/PrintService.java,f\1\f1eb50f64a33e358d127657e7c020221fd4a889b
 d

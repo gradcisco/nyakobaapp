@@ -24,6 +24,10 @@
         "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\layout\\withdraw_main.xml"
     },
     {
+        "merged": "com.nyakoba.app-merged_res-25:/layout_dashboard_main_print.xml.flat",
+        "source": "com.nyakoba.app-main-27:/layout/dashboard_main_print.xml"
+    },
+    {
         "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\drawable\\ic_launcher_background.xml"
     },
@@ -102,10 +106,6 @@
     {
         "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\mipmap-anydpi-v33_ic_launcher.xml.flat",
         "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\mipmap-anydpi-v33\\ic_launcher.xml"
-    },
-    {
-        "merged": "com.nyakoba.app-merged_res-25:/layout_withdraw_main.xml.flat",
-        "source": "com.nyakoba.app-main-27:/layout/withdraw_main.xml"
     },
     {
         "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\drawable_username_icon.xml.flat",

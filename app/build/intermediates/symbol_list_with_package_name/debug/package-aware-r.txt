@@ -2730,7 +2730,6 @@ id groups
 id growerno
 id guideline
 id header_title
-id helpCard
 id hideable
 id home
 id homeAsUp
@@ -2743,12 +2742,10 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id image_view
 id image_view1
 id image_view20
 id image_view21
 id image_view22
-id image_view23
 id immediateStop
 id included
 id info
@@ -2907,7 +2904,6 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
-id settingsCard
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -2976,8 +2972,6 @@ id textView1
 id textView20
 id textView21
 id textView22
-id textView23
-id textView4
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon

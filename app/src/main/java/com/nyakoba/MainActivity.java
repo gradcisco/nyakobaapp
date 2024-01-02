@@ -3,6 +3,7 @@ package com.nyakoba;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
@@ -21,8 +22,11 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.ctk.sdk.PosApiHelper;
 import com.nyakoba.model.LoginRequest;
+import com.nyakoba.util.Session;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,8 +35,7 @@ import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 public class MainActivity extends AppCompatActivity {
 
     Context mContext;
-
-    public static String agentId = "";
+    public static Session session = new Session();
 
     public static String[] MY_PERMISSIONS = {
             "android.permission.READ_EXTERNAL_STORAGE",
@@ -49,9 +52,11 @@ public class MainActivity extends AppCompatActivity {
     //28461366 $ogar0609,N$
     //KB0430215
     //0944563
-    private String url = "http://192.168.100.45:80/login";
+    private String url = "http://192.168.100.45:8080/login";
 
     private EditText editTextUsername, editTextPassword;
+
+    public static final String MyPREFERENCES = "MyPrefs" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,16 +76,16 @@ public class MainActivity extends AppCompatActivity {
         String username = editTextUsername.getText().toString();
         String password = editTextPassword.getText().toString();
 
-        agentId = username;
-
 
         // Example JSON data
        JSONObject jsonData = new JSONObject();
         try {
             jsonData.put("username", username);
             jsonData.put("password", password);
-        } catch (JSONException e) {
+        } catch (Exception e) {
             e.printStackTrace();
+            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();//display the response on screen
+
         }
 
 
@@ -94,18 +99,25 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(JSONObject response) {
                 try{
-                    JSONObject jsonObject = new JSONObject(response.toString());
-                    String status = jsonObject.get("status").toString();
+                    String status = response.get("status").toString();
 
                     Log.d("VolleyResponse", response.toString());
+
+                    SharedPreferences sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedpreferences.edit();
+                    editor.putString("username", response.get("agentName").toString());
+                    editor.apply();
+                    editor.commit();
 
                     if(status.equalsIgnoreCase("000")){
                         Intent intent = new Intent(context, PrintActivity.class);
                         startActivity(intent);
                     }
                     else{
+/*
                         Intent intent = new Intent(context, PrintActivity.class);
                         startActivity(intent);
+*/
                         Toast.makeText(getApplicationContext(), "Please enter correct username and Password", Toast.LENGTH_LONG).show();
                     }
 

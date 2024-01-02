@@ -90,6 +90,7 @@ public class WithDrawActivity extends AppCompatActivity {
                 try{
                  //   new PrintActivity().print(response);
                     Toast.makeText(context, "-->>" + response, Toast.LENGTH_LONG).show();//display the response on screen
+                    print(response);
 
 
                 }
@@ -128,7 +129,7 @@ public class WithDrawActivity extends AppCompatActivity {
             posApiHelper.PrintStr("CASH WITHDRAWAL RECEIPT [CUSTOMER COPY]\n");
             posApiHelper.PrintStr("======== FEB 2023 TEA INCLUSIVE =======\n");
             posApiHelper.PrintStr("                                       \n");
-            /*posApiHelper.PrintStr("Account Name: " + (response.has("accountname") ? response.get("accountname") : "Dummy") + "\n");
+            posApiHelper.PrintStr("Account Name: " + (response.has("accountname") ? response.get("accountname") : "Dummy") + "\n");
             posApiHelper.PrintStr("RE\n");
             posApiHelper.PrintStr("Grower No:      " + (response.has("growerno") ? response.get("growerno") : "Dummy GR NO") + "\n");
             posApiHelper.PrintStr("Transaction No: " + (response.has("transactionno") ? response.get("transactionno") : "Dummy transactionno") + "\n");
@@ -141,7 +142,7 @@ public class WithDrawActivity extends AppCompatActivity {
             String relation = "Account Holder";
             //if(payeeRelation.equalsIgnoreCase())
             posApiHelper.PrintStr("Payee Details: " + payeeRelation + "\n");
-            posApiHelper.PrintStr((response.has("payeename") ? response.get("payeename") : "Dummy payeename") + "\n");*/
+            posApiHelper.PrintStr((response.has("payeename") ? response.get("payeename") : "Dummy payeename") + "\n");
 
             //  SendMsg("Printing... ");
             ret = posApiHelper.PrintStart();

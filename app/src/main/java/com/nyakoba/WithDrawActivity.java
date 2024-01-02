@@ -117,10 +117,10 @@ public class WithDrawActivity extends AppCompatActivity {
 
                     printStr.append("NYAKOBA FARMERS RURAL SACCO.\n");
                     printStr.append("Mobile No. +254-705-799-293.\n");
-                    printStr.append("CASH WITHDRAWAL RECEIPT [CUSTOMER COPY]\n");
+                    printStr.append("CASH WITHDRAWAL RECEIPT \n [CUSTOMER COPY]\n");
                     printStr.append("==== FEB 2023 TEA INCLUSIVE ====\n");
                     printStr.append("                                       \n");
-                    printStr.append("Account Name: " + (response.has("accountname") ? response.get("accountname") : "Dummy") + "\n");
+                    printStr.append("Account Name: " + (response.has("accname") ? response.get("accname") : "Dummy") + "\n");
                     printStr.append("RE\n");
                     printStr.append("Grower No:      " + (response.has("grNo") ? response.get("grNo") : "Dummy GR NO") + "\n");
                     printStr.append("Transaction No: " + (response.has("transactionNo") ? response.get("transactionNo") : "Dummy transactionno") + "\n");
@@ -135,7 +135,7 @@ public class WithDrawActivity extends AppCompatActivity {
 
                     System.out.println("\n\n\n\n\n" + printStr + "\n\n\n\n");
 
-                    print(response , printStr.toString());
+                    print(response);
 
 
                 }
@@ -151,13 +151,13 @@ public class WithDrawActivity extends AppCompatActivity {
                 // Handle the error
                 //new PrintActivity().print(null);
                 Toast.makeText(context, "error::" + error.toString(), Toast.LENGTH_LONG).show();//display the response on screen
-                print(null, "");
+                print(null);
 
             }
         });
     }
 
-    public void print(JSONObject response , String printMsg) {
+    public void print(JSONObject response) {
 
         Toast.makeText(getApplicationContext(), "Starting Print", Toast.LENGTH_SHORT).show();//display the response on screen
 
@@ -187,6 +187,10 @@ public class WithDrawActivity extends AppCompatActivity {
             posApiHelper.PrintStr("Payee Details: " + payeeRelation + "\n");
             posApiHelper.PrintStr((response.has("payeeName") ? response.get("payeeName") : "Dummy payeename") + "\n");
             //  SendMsg("Printing... ");
+            posApiHelper.PrintStr("                                       \n");
+            posApiHelper.PrintStr("                                       \n");
+            posApiHelper.PrintStr("                                       \n");
+            posApiHelper.PrintStr("                                       \n");
             ret = posApiHelper.PrintStart();
             Toast.makeText(getApplicationContext(), "End Print", Toast.LENGTH_SHORT).show();
 

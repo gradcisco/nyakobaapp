@@ -113,14 +113,14 @@ public class WithDrawActivity extends AppCompatActivity {
 
     public void print(JSONObject response) {
 
-      //  Toast.makeText(getApplicationContext(), "Starting Printer Status ==", Toast.LENGTH_SHORT).show();//display the response on screen
+        Toast.makeText(getApplicationContext(), "Starting Print", Toast.LENGTH_SHORT).show();//display the response on screen
 
 
         try{
             Message msg = Message.obtain();
             Message msg1 = new Message();
             ret = posApiHelper.PrintCheckStatus();
-           // Toast.makeText(getApplicationContext(), "Starting Printer Status ==" + ret, Toast.LENGTH_SHORT).show();//display the response on screen
+            Toast.makeText(getApplicationContext(), "Starting Printer Status ==" + ret, Toast.LENGTH_SHORT).show();//display the response on screen
 
             posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
             posApiHelper.PrintStr("NYAKOBA FARMERS RURAL SACCO.\n");
@@ -128,7 +128,7 @@ public class WithDrawActivity extends AppCompatActivity {
             posApiHelper.PrintStr("CASH WITHDRAWAL RECEIPT [CUSTOMER COPY]\n");
             posApiHelper.PrintStr("======== FEB 2023 TEA INCLUSIVE =======\n");
             posApiHelper.PrintStr("                                       \n");
-            posApiHelper.PrintStr("Account Name: " + (response.has("accountname") ? response.get("accountname") : "Dummy") + "\n");
+            /*posApiHelper.PrintStr("Account Name: " + (response.has("accountname") ? response.get("accountname") : "Dummy") + "\n");
             posApiHelper.PrintStr("RE\n");
             posApiHelper.PrintStr("Grower No:      " + (response.has("growerno") ? response.get("growerno") : "Dummy GR NO") + "\n");
             posApiHelper.PrintStr("Transaction No: " + (response.has("transactionno") ? response.get("transactionno") : "Dummy transactionno") + "\n");
@@ -141,10 +141,11 @@ public class WithDrawActivity extends AppCompatActivity {
             String relation = "Account Holder";
             //if(payeeRelation.equalsIgnoreCase())
             posApiHelper.PrintStr("Payee Details: " + payeeRelation + "\n");
-            posApiHelper.PrintStr((response.has("payeename") ? response.get("payeename") : "Dummy payeename") + "\n");
+            posApiHelper.PrintStr((response.has("payeename") ? response.get("payeename") : "Dummy payeename") + "\n");*/
 
             //  SendMsg("Printing... ");
             ret = posApiHelper.PrintStart();
+            Toast.makeText(getApplicationContext(), "End Print", Toast.LENGTH_SHORT).show();
 
         }
         catch (Exception ex){

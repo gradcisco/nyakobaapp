@@ -173,7 +173,7 @@ public class WithDrawActivity extends AppCompatActivity {
             posApiHelper.PrintStr("NYAKOBA FARMERS RURAL SACCO.\n");
             posApiHelper.PrintStr("Mobile No. +254-705-799-293.\n");
             posApiHelper.PrintStr("CASH WITHDRAWAL RECEIPT \n [CUSTOMER COPY]\n");
-            posApiHelper.PrintStr("==== FEB 2023 TEA INCLUSIVE ====\n");
+            posApiHelper.PrintStr("==== " + (response.has("lastTeaPeriod") ? response.get("lastTeaPeriod") : "FEB 2023 TEA INCLUSIVE") + " ====\n");
             posApiHelper.PrintStr("                                       \n");
             posApiHelper.PrintStr("Account Name: " + (response.has("accname") ? response.get("accname") : "Dummy") + "\n");
             posApiHelper.PrintStr("RE\n");
@@ -181,9 +181,11 @@ public class WithDrawActivity extends AppCompatActivity {
             posApiHelper.PrintStr("Transaction No: " + (response.has("transactionNo") ? response.get("transactionNo") : "Dummy transactionno") + "\n");
             posApiHelper.PrintStr("Date&Time: " + new Date() + "\n");
             posApiHelper.PrintStr("Previous Balance: Ksh." + (response.has("previousBalance") ? response.get("previousBalance") : "Dummy previousBalance") + "\n");
+            posApiHelper.PrintSetBold(1);
             posApiHelper.PrintStr("Transaction Amt: Ksh." + (response.has("amt") ? response.get("amt") : "0.0") + "\n");
+            posApiHelper.PrintSetBold(0);
             posApiHelper.PrintStr("Commission:  " + (response.has("commission") ? response.get("commission") : "Dummy commission") + "\n");
-            posApiHelper.PrintStr("Excise Duty: " + (response.has("exciseDuty") ? response.get("exciseDuty") : "Dummy exciseduty") + "\n");
+            posApiHelper.PrintStr("Excise Duty: " + (response.has("exciseDuty") ? response.get("exciseDuty") : "Dummy exciseduty") + "              " + (response.has("codd") ? response.get("codd") : "XYZ") + "\n");
             posApiHelper.PrintStr("Balance After: " + (response.has("balanceAfter") ? response.get("balanceAfter") : "Dummy balanceafter") + "\n");
             posApiHelper.PrintStr((response.has("amtInWords") ? response.get("amtInWords") : "Dummy Word amount") + "\n");
             String payeeRelation = (response.has("relationship") ? response.get("relationship").toString() : "Dummy relationship");
@@ -193,6 +195,8 @@ public class WithDrawActivity extends AppCompatActivity {
             posApiHelper.PrintStr("                                       \n");
             posApiHelper.PrintStr("                                       \n");
             ret = posApiHelper.PrintStart();
+
+           // posApiHelper.
             Toast.makeText(getApplicationContext(), "End Print", Toast.LENGTH_SHORT).show();
 
         }

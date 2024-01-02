@@ -187,7 +187,7 @@ public class PrintActivity extends Activity {
     }
 
     public void withdraw(View view){
-       //   Toast.makeText(getApplicationContext(), "Display Withdraw Screen", Toast.LENGTH_SHORT).show();//display the response on screen
+        //   Toast.makeText(getApplicationContext(), "Display Withdraw Screen", Toast.LENGTH_SHORT).show();//display the response on screen
 
         Intent intent = new Intent(getApplicationContext(), WithDrawActivity.class);
         startActivity(intent);
@@ -227,7 +227,7 @@ public class PrintActivity extends Activity {
 
 
     public void onClickTest(View v) {
-     //   Toast.makeText(getApplicationContext(), "Starting Print", Toast.LENGTH_SHORT).show();//display the response on screen
+        //   Toast.makeText(getApplicationContext(), "Starting Print", Toast.LENGTH_SHORT).show();//display the response on screen
 
         if (printThread != null && !printThread.isThreadFinished()) {
             Log.e(tag, "Thread is still running...");
@@ -235,25 +235,25 @@ public class PrintActivity extends Activity {
         }
 
         try{
-          //  PosApiHelper posApiHelpers = PosApiHelper.getInstance();
+            //  PosApiHelper posApiHelpers = PosApiHelper.getInstance();
             Message msg = Message.obtain();
             Message msg1 = new Message();
             ret = posApiHelper.PrintCheckStatus();
             Toast.makeText(getApplicationContext(), "Starting Printer Status ==" + ret, Toast.LENGTH_SHORT).show();//display the response on screen
 
-           // SendMsg("PRINT_TEST");
+            // SendMsg("PRINT_TEST");
             //msg.what = DISABLE_RG;
             //handler.sendMessage(msg);
             posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
             posApiHelper.PrintStr("英语:Hello, Long time no see   ￡ ：2089.22\n");
 
-          //  SendMsg("Printing... ");
+            //  SendMsg("Printing... ");
             ret = posApiHelper.PrintStart();
 
-          //  Toast.makeText(getApplicationContext(), "Print state=" + ret, Toast.LENGTH_SHORT).show();//display the response on screen
+            //  Toast.makeText(getApplicationContext(), "Print state=" + ret, Toast.LENGTH_SHORT).show();//display the response on screen
 
-           // msg1.what = ENABLE_RG;
-           // handler.sendMessage(msg1);
+            // msg1.what = ENABLE_RG;
+            // handler.sendMessage(msg1);
         }
         catch (Exception ex){
             Toast.makeText(getApplicationContext(), "Error = " + ex.getMessage(), Toast.LENGTH_SHORT).show();//display the response on screen
@@ -262,8 +262,8 @@ public class PrintActivity extends Activity {
 
 
 
-     //   printThread = new Print_Thread(PRINT_TEST);
-      //  printThread.start();
+        //   printThread = new Print_Thread(PRINT_TEST);
+        //  printThread.start();
         Toast.makeText(getApplicationContext(), "Finished Print", Toast.LENGTH_SHORT).show();
     }
 

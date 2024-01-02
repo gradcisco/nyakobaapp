@@ -213,7 +213,7 @@ public class WithDrawActivity extends AppCompatActivity {
             posApiHelper.PrintStr("                                       \n");
             posApiHelper.PrintStr("********************************\n");
             posApiHelper.PrintStr("Thank You For Banking With Us.\n");
-            posApiHelper.PrintStr("You were served by " + teller + ".\n");
+            posApiHelper.PrintStr("You were served by:- " + teller + ".\n");
             posApiHelper.PrintStr("********************************\n");
             posApiHelper.PrintStr("                                       \n");
             posApiHelper.PrintStr("                                       \n");

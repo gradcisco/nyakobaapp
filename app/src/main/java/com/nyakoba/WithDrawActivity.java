@@ -56,10 +56,11 @@ public class WithDrawActivity extends AppCompatActivity {
 
         // Example JSON data
         JSONObject jsonData = new JSONObject();
+        String sessionName = "N/A";
         try {
 
             SharedPreferences sharedpreferences = getSharedPreferences(MainActivity.MyPREFERENCES, Context.MODE_PRIVATE);
-            String sessionName = sharedpreferences.getString("username", null);
+            sessionName = sharedpreferences.getString("username", null);
 
             jsonData.put("requestid", UUID.randomUUID().toString());
             jsonData.put("uniqueno", growerNo);
@@ -77,11 +78,11 @@ public class WithDrawActivity extends AppCompatActivity {
      //   Toast.makeText(getApplicationContext(), "Withdraw...>>>" + res , Toast.LENGTH_LONG).show();//display the response on screen
 
 
-        sendReq(jsonData, this);
+        sendReq(jsonData, this, sessionName);
 
     }
 
-    public void sendReq(JSONObject jsonData , Context context){
+    public void sendReq(JSONObject jsonData , Context context, String teller){
         // Create a VolleyRequest instance
         VolleyRequest volleyRequest = new VolleyRequest(this, url);
 
@@ -139,7 +140,7 @@ public class WithDrawActivity extends AppCompatActivity {
 
                     System.out.println("\n\n\n\n\n" + printStr + "\n\n\n\n");
 
-                    print(response);
+                    print(response , teller);
 
 
                 }
@@ -155,13 +156,13 @@ public class WithDrawActivity extends AppCompatActivity {
                 // Handle the error
                 //new PrintActivity().print(null);
                 Toast.makeText(context, "error::" + error.toString(), Toast.LENGTH_LONG).show();//display the response on screen
-                print(null);
+               // print(null);
 
             }
         });
     }
 
-    public void print(JSONObject response) {
+    public void print(JSONObject response , String teller) {
 
         Toast.makeText(getApplicationContext(), "Starting Print", Toast.LENGTH_SHORT).show();//display the response on screen
 
@@ -209,7 +210,11 @@ public class WithDrawActivity extends AppCompatActivity {
             String payeeRelation = (response.has("relationship") ? response.get("relationship").toString() : "Dummy relationship");
             posApiHelper.PrintStr("Payee Details: " + payeeRelation + "\n");
             posApiHelper.PrintStr((response.has("payeeName") ? response.get("payeeName") : "Dummy payeename") + "\n");
-            //  SendMsg("Printing... ");
+            posApiHelper.PrintStr("                                       \n");
+            posApiHelper.PrintStr("********************************\n");
+            posApiHelper.PrintStr("Thank You For Banking With Us.\n");
+            posApiHelper.PrintStr("You were served by " + teller + ".\n");
+            posApiHelper.PrintStr("********************************\n");
             posApiHelper.PrintStr("                                       \n");
             posApiHelper.PrintStr("                                       \n");
             posApiHelper.PrintStr("                                       \n");

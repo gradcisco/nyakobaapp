@@ -35,7 +35,7 @@ public class MainActivityBkp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dashboard_main);
+        setContentView(R.layout.withdraw_main);
 
        // getData();
     }
@@ -77,7 +77,7 @@ public class MainActivityBkp extends AppCompatActivity {
                 Log.d("VolleyResponse", response.toString());
 
 
-                Intent intent = new Intent(context, DashBoardActivity.class);
+                Intent intent = new Intent(context, WithDrawActivity.class);
                 startActivity(intent);
             }
 
@@ -86,7 +86,7 @@ public class MainActivityBkp extends AppCompatActivity {
                 // Handle the error
                 Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();//display the response on screen
 
-                Intent intent = new Intent(context, DashBoardActivity.class);
+                Intent intent = new Intent(context, WithDrawActivity.class);
                 startActivity(intent);
 
             }

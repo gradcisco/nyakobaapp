@@ -55,8 +55,8 @@
 33        </activity>
 34        <activity
 34-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:25:9-27:52
-35            android:name="com.nyakoba.DashBoardActivity"
-35-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:26:17-50
+35            android:name="com.nyakoba.WithDrawActivity"
+35-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:26:17-49
 36            android:exported="true" />
 36-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:27:17-40
 37        <activity

@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
     Context mContext;
 
+    public static String agentId = "";
+
     public static String[] MY_PERMISSIONS = {
             "android.permission.READ_EXTERNAL_STORAGE",
             "android.permission.WRITE_EXTERNAL_STORAGE",
@@ -44,7 +46,10 @@ public class MainActivity extends AppCompatActivity {
     private StringRequest mStringRequest;
 
     private ProgressBar loadingPB;
-    private String url = "http://192.168.100.48:80/login";
+    //28461366 $ogar0609,N$
+    //KB0430215
+    //0944563
+    private String url = "http://192.168.100.45:80/login";
 
     private EditText editTextUsername, editTextPassword;
 
@@ -60,15 +65,14 @@ public class MainActivity extends AppCompatActivity {
     public void userLogin(View view){
 
         final Context context = this;
-
-        Toast.makeText(getApplicationContext(), "Starting req", Toast.LENGTH_SHORT).show();//display the response on screen
         editTextUsername = findViewById(R.id.username);
         editTextPassword = findViewById(R.id.userpassword);
 
         String username = editTextUsername.getText().toString();
         String password = editTextPassword.getText().toString();
 
-        //  getData();
+        agentId = username;
+
 
         // Example JSON data
        JSONObject jsonData = new JSONObject();
@@ -78,8 +82,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
 
 
         // Create a VolleyRequest instance
@@ -102,6 +104,8 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                     else{
+                        Intent intent = new Intent(context, PrintActivity.class);
+                        startActivity(intent);
                         Toast.makeText(getApplicationContext(), "Please enter correct username and Password", Toast.LENGTH_LONG).show();
                     }
 
@@ -112,18 +116,12 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-
-             //   Intent intent = new Intent(context, DashBoardActivity.class);
-              //  startActivity(intent);
             }
 
             @Override
             public void onError(VolleyError error) {
                 // Handle the error
                 Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();//display the response on screen
-
-                Intent intent = new Intent(context, DashBoardActivity.class);
-                startActivity(intent);
 
             }
         });

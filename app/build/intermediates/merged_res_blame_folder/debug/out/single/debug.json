@@ -1,142 +1,150 @@
 [
     {
-        "merged": "com.nyakoba.app-merged_res-25:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.nyakoba.app-main-27:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\drawable_help.png.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\drawable\\help.png"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.nyakoba.app-main-27:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/drawable_help.png.flat",
-        "source": "com.nyakoba.app-main-27:/drawable/help.png"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.nyakoba.app-main-27:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/layout_dashboard_main_print.xml.flat",
-        "source": "com.nyakoba.app-main-27:/layout/dashboard_main_print.xml"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\layout_dashboard_main.xml.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\layout\\dashboard_main.xml"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.nyakoba.app-main-27:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\layout_withdraw_main.xml.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\layout\\withdraw_main.xml"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/drawable_interests.png.flat",
-        "source": "com.nyakoba.app-main-27:/drawable/interests.png"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "com.nyakoba.app-main-27:/drawable-v24/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/drawable_learn.png.flat",
-        "source": "com.nyakoba.app-main-27:/drawable/learn.png"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.nyakoba.app-main-27:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\drawable_ic_logout.xml.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\drawable\\ic_logout.xml"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/xml_backup_rules.xml.flat",
-        "source": "com.nyakoba.app-main-27:/xml/backup_rules.xml"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/layout_activity_main.xml.flat",
-        "source": "com.nyakoba.app-main-27:/layout/activity_main.xml"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.nyakoba.app-main-27:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\drawable_withdraw.jpg.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\drawable\\withdraw.jpg"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/drawable_username_icon.xml.flat",
-        "source": "com.nyakoba.app-main-27:/drawable/username_icon.xml"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\layout_dashboard_main_print.xml.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\layout\\dashboard_main_print.xml"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/xml_data_extraction_rules.xml.flat",
-        "source": "com.nyakoba.app-main-27:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.nyakoba.app-main-27:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\drawable_ic_back.xml.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\drawable\\ic_back.xml"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/drawable_location_icon.xml.flat",
-        "source": "com.nyakoba.app-main-27:/drawable/location_icon.xml"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.nyakoba.app-main-27:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\drawable_interests.png.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\drawable\\interests.png"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/drawable_profile.png.flat",
-        "source": "com.nyakoba.app-main-27:/drawable/profile.png"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\drawable_practice.png.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\drawable\\practice.png"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/drawable_settings.png.flat",
-        "source": "com.nyakoba.app-main-27:/drawable/settings.png"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\drawable_password_icon.xml.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\drawable\\password_icon.xml"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.nyakoba.app-main-27:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/drawable_write.png.flat",
-        "source": "com.nyakoba.app-main-27:/drawable/write.png"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\drawable_custom_rectangle.xml.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\drawable\\custom_rectangle.xml"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.nyakoba.app-main-27:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\drawable_settings.png.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\drawable\\settings.png"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/drawable_password_icon.xml.flat",
-        "source": "com.nyakoba.app-main-27:/drawable/password_icon.xml"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\drawable_location_icon.xml.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\drawable\\location_icon.xml"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.nyakoba.app-main-27:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/drawable_ic_logout.xml.flat",
-        "source": "com.nyakoba.app-main-27:/drawable/ic_logout.xml"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\mipmap-anydpi-v33_ic_launcher.xml.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\mipmap-anydpi-v33\\ic_launcher.xml"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/drawable_nyakobatea.jpg.flat",
-        "source": "com.nyakoba.app-main-27:/drawable/nyakobatea.jpg"
+        "merged": "com.nyakoba.app-merged_res-25:/layout_withdraw_main.xml.flat",
+        "source": "com.nyakoba.app-main-27:/layout/withdraw_main.xml"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/drawable_ic_back.xml.flat",
-        "source": "com.nyakoba.app-main-27:/drawable/ic_back.xml"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\drawable_username_icon.xml.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\drawable\\username_icon.xml"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/mipmap-anydpi-v33_ic_launcher.xml.flat",
-        "source": "com.nyakoba.app-main-27:/mipmap-anydpi-v33/ic_launcher.xml"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\drawable_profile.png.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\drawable\\profile.png"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.nyakoba.app-main-27:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/drawable_custom_rectangle.xml.flat",
-        "source": "com.nyakoba.app-main-27:/drawable/custom_rectangle.xml"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.nyakoba.app-main-27:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\drawable_write.png.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\drawable\\write.png"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/drawable_practice.png.flat",
-        "source": "com.nyakoba.app-main-27:/drawable/practice.png"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/drawable_withdraw.jpg.flat",
-        "source": "com.nyakoba.app-main-27:/drawable/withdraw.jpg"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\drawable_nyakobatea.jpg.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\drawable\\nyakobatea.jpg"
     },
     {
-        "merged": "com.nyakoba.app-merged_res-25:/layout_dashboard_main.xml.flat",
-        "source": "com.nyakoba.app-main-27:/layout/dashboard_main.xml"
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\drawable_learn.png.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\drawable\\learn.png"
+    },
+    {
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-merged_res-25:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dmutegi\\.gradle\\daemon\\7.5\\com.nyakoba.app-main-27:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     }
 ]

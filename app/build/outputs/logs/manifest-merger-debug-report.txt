@@ -115,12 +115,12 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:21:17-76
 	android:name
 		ADDED from C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:21:27-74
-activity#com.nyakoba.DashBoardActivity
+activity#com.nyakoba.WithDrawActivity
 ADDED from C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:25:9-27:52
 	android:exported
 		ADDED from C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:27:17-40
 	android:name
-		ADDED from C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:26:17-50
+		ADDED from C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:26:17-49
 activity#com.nyakoba.PrintActivity
 ADDED from C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:29:9-31:52
 	android:exported

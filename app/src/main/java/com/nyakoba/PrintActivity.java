@@ -25,6 +25,7 @@ import android.widget.*;
 import com.ctk.sdk.PosApiHelper;
 import com.google.zxing.BarcodeFormat;
 import com.nyakoba.service.MyService;
+import org.json.JSONObject;
 
 import java.util.Timer;
 
@@ -109,13 +110,6 @@ public class PrintActivity extends Activity {
 
         setContentView(R.layout.dashboard_main_print);
 
-
-
-
-      //  init_Gray();
-
-
-
     }
 
     private void setValue(int val) {
@@ -191,6 +185,46 @@ public class PrintActivity extends Activity {
 
         return super.onKeyDown(keyCode, event);
     }
+
+    public void withdraw(View view){
+       //   Toast.makeText(getApplicationContext(), "Display Withdraw Screen", Toast.LENGTH_SHORT).show();//display the response on screen
+
+        Intent intent = new Intent(getApplicationContext(), WithDrawActivity.class);
+        startActivity(intent);
+
+    }
+
+
+    public void print(JSONObject jsonObject) {
+
+        Toast.makeText(getApplicationContext(), "Starting Printer Status ==", Toast.LENGTH_SHORT).show();//display the response on screen
+
+
+        try{
+            Message msg = Message.obtain();
+            Message msg1 = new Message();
+            ret = posApiHelper.PrintCheckStatus();
+            Toast.makeText(getApplicationContext(), "Starting Printer Status ==" + ret, Toast.LENGTH_SHORT).show();//display the response on screen
+
+            posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
+            posApiHelper.PrintStr("英语:Hello, Long time no see   ￡ ：2089.22\n");
+
+            //  SendMsg("Printing... ");
+            ret = posApiHelper.PrintStart();
+
+        }
+        catch (Exception ex){
+            Toast.makeText(getApplicationContext(), "Error = " + ex.getMessage(), Toast.LENGTH_SHORT).show();//display the response on screen
+
+        }
+
+
+
+        //   printThread = new Print_Thread(PRINT_TEST);
+        //  printThread.start();
+        Toast.makeText(getApplicationContext(), "Finished Print", Toast.LENGTH_SHORT).show();
+    }
+
 
     public void onClickTest(View v) {
      //   Toast.makeText(getApplicationContext(), "Starting Print", Toast.LENGTH_SHORT).show();//display the response on screen

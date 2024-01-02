@@ -32,7 +32,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.nyakoba.DashBoardActivity"
+            android:name="com.nyakoba.WithDrawActivity"
             android:exported="true" />
         <activity
             android:name="com.nyakoba.PrintActivity"

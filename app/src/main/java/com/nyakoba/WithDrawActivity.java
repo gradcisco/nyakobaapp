@@ -20,6 +20,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.UUID;
 
@@ -181,8 +182,15 @@ public class WithDrawActivity extends AppCompatActivity {
             posApiHelper.PrintStr("RE\n");
             posApiHelper.PrintStr("Grower No:      " + (response.has("grNo") ? response.get("grNo") : "Dummy GR NO") + "\n");
             posApiHelper.PrintStr("Transaction No: " + (response.has("transactionNo") ? response.get("transactionNo") : "Dummy transactionno") + "\n");
+
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                posApiHelper.PrintStr("Date&Time: " + LocalDateTime.now().toString() + "\n");
+                LocalDateTime myDateObj = LocalDateTime.now();
+                System.out.println("Before formatting: " + myDateObj);
+                DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+                dateFormat = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss.SSS");
+
+                String formattedDate = myDateObj.format(dateFormat);
+                posApiHelper.PrintStr("Date&Time: " + formattedDate + "\n");
             }
             else{
                 posApiHelper.PrintStr("Date&Time: " + new Date() + "\n");

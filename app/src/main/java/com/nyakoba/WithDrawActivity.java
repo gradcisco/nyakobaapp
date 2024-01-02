@@ -189,7 +189,7 @@ public class WithDrawActivity extends AppCompatActivity {
             }
             posApiHelper.PrintStr("Previous Balance: Ksh." + (response.has("previousBalance") ? response.get("previousBalance") : "Dummy previousBalance") + "\n");
             posApiHelper.PrintSetBold(1);
-            posApiHelper.PrintSetFont((byte) 30, (byte) 30, (byte) 0x00);
+            posApiHelper.PrintSetFont((byte) 34, (byte) 34, (byte) 0x33);
             posApiHelper.PrintStr("Transaction Amt: Ksh." + (response.has("amt") ? response.get("amt") : "0.0") + "\n");
             posApiHelper.PrintSetBold(0);
             posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
@@ -197,11 +197,12 @@ public class WithDrawActivity extends AppCompatActivity {
             posApiHelper.PrintStr("Excise Duty: " + (response.has("exciseDuty") ? response.get("exciseDuty") : "Dummy exciseduty") + "    " + (response.has("codd") ? response.get("codd") : "XYZ") + "\n");
             posApiHelper.PrintStr("Balance After: " + (response.has("balanceAfter") ? response.get("balanceAfter") : "Dummy balanceafter") + "\n");
             posApiHelper.PrintStr((response.has("amtInWords") ? response.get("amtInWords") : "Dummy Word amount") + "\n");
-            posApiHelper.PrintStr("****************************************\n");
+            posApiHelper.PrintStr("********************************\n");
             String payeeRelation = (response.has("relationship") ? response.get("relationship").toString() : "Dummy relationship");
             posApiHelper.PrintStr("Payee Details: " + payeeRelation + "\n");
             posApiHelper.PrintStr((response.has("payeeName") ? response.get("payeeName") : "Dummy payeename") + "\n");
             //  SendMsg("Printing... ");
+            posApiHelper.PrintStr("                                       \n");
             posApiHelper.PrintStr("                                       \n");
             posApiHelper.PrintStr("                                       \n");
             ret = posApiHelper.PrintStart();

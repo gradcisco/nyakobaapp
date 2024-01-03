@@ -1,21 +1,19 @@
 package com.nyakoba;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import com.android.volley.*;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.ctk.sdk.PosApiHelper;
-import com.nyakoba.util.Session;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -94,7 +92,7 @@ public class WithDrawActivity extends AppCompatActivity {
             public void onSuccess(JSONObject response) {
                 try{
                  //   new PrintActivity().print(response);
-                    Toast.makeText(context, "-->>" + response, Toast.LENGTH_LONG).show();//display the response on screen
+                   // Toast.makeText(context, "-->>" + response, Toast.LENGTH_LONG).show();//display the response on screen
 
                     StringBuilder printStr = new StringBuilder();
 
@@ -164,14 +162,14 @@ public class WithDrawActivity extends AppCompatActivity {
 
     public void print(JSONObject response , String teller) {
 
-        Toast.makeText(getApplicationContext(), "Starting Print", Toast.LENGTH_SHORT).show();//display the response on screen
+     //   Toast.makeText(getApplicationContext(), "Starting Print", Toast.LENGTH_SHORT).show();//display the response on screen
 
 
         try{
             Message msg = Message.obtain();
             Message msg1 = new Message();
             ret = posApiHelper.PrintCheckStatus();
-            Toast.makeText(getApplicationContext(), "Starting Printer Status ==" + ret, Toast.LENGTH_SHORT).show();//display the response on screen
+         //   Toast.makeText(getApplicationContext(), "Starting Printer Status ==" + ret, Toast.LENGTH_SHORT).show();//display the response on screen
 
             posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
             posApiHelper.PrintStr("NYAKOBA FARMERS RURAL SACCO.\n");
@@ -221,7 +219,7 @@ public class WithDrawActivity extends AppCompatActivity {
             ret = posApiHelper.PrintStart();
 
            // posApiHelper.
-            Toast.makeText(getApplicationContext(), "End Print", Toast.LENGTH_SHORT).show();
+         //   Toast.makeText(getApplicationContext(), "End Print", Toast.LENGTH_SHORT).show();
 
         }
         catch (Exception ex){

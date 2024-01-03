@@ -5,7 +5,5 @@ f
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 e
 5app/src/main/java/com/nyakoba/model/LoginRequest.java,8\e\8ee940c83602770749208868c809876246d280b5
-^
-.app/src/main/java/com/nyakoba/PostApiTask.java,d\8\d8d5fe345cad22a609f651d771a72112cf378efc
 Y
 )app/src/main/res/layout/activity_main.xml,7\6\76b07e40f24cce093536731477540f12e7da3cb6

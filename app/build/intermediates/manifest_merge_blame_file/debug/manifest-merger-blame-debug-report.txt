@@ -9,84 +9,91 @@
 8-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="33" />
 9-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml
-10    <!-- adding internet permission -->
-11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:36:5-66
-11-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:36:22-64
-12
-13    <application
-13-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:5:5-34:19
-14        android:allowBackup="true"
-14-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:6:13-39
-15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-15-->[androidx.core:core:1.7.0] C:\Users\dmutegi\.gradle\caches\transforms-3\0099490370172d9f79b8e8be3c22e201\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
-16        android:dataExtractionRules="@xml/data_extraction_rules"
-16-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:7:13-69
-17        android:debuggable="true"
-18        android:extractNativeLibs="false"
-19        android:fullBackupContent="@xml/backup_rules"
-19-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:8:13-58
-20        android:icon="@mipmap/ic_launcher"
-20-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:9:13-47
-21        android:label="@string/app_name"
-21-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:10:13-45
-22        android:supportsRtl="true"
-22-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:11:13-39
-23        android:theme="@style/Theme.Nyakoba"
-23-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:12:13-49
-24        android:usesCleartextTraffic="true" >
-24-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:13:13-48
-25        <activity
-25-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:15:9-23:20
-26            android:name="com.nyakoba.MainActivity"
-26-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:16:17-45
-27            android:exported="true" >
-27-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:17:17-40
-28            <intent-filter>
-28-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:18:13-22:29
-29                <action android:name="android.intent.action.MAIN" />
-29-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:19:17-68
-29-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:19:25-66
-30
-31                <category android:name="android.intent.category.LAUNCHER" />
-31-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:21:17-76
-31-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:21:27-74
-32            </intent-filter>
-33        </activity>
-34        <activity
-34-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:25:9-27:52
-35            android:name="com.nyakoba.WithDrawActivity"
-35-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:26:17-49
-36            android:exported="true" />
-36-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:27:17-40
+10
+11    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+11-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:5:5-85
+11-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:5:22-83
+12    <!-- adding internet permission -->
+13    <uses-permission android:name="android.permission.INTERNET" />
+13-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:37:5-66
+13-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:37:22-64
+14    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+14-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:38:5-75
+14-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:38:22-72
+15
+16    <application
+16-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:6:5-35:19
+17        android:allowBackup="true"
+17-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:7:13-39
+18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+18-->[androidx.core:core:1.7.0] C:\Users\dmutegi\.gradle\caches\transforms-3\0099490370172d9f79b8e8be3c22e201\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+19        android:dataExtractionRules="@xml/data_extraction_rules"
+19-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:8:13-69
+20        android:debuggable="true"
+21        android:extractNativeLibs="false"
+22        android:fullBackupContent="@xml/backup_rules"
+22-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:9:13-58
+23        android:icon="@mipmap/ic_launcher"
+23-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:10:13-47
+24        android:label="@string/app_name"
+24-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:11:13-45
+25        android:supportsRtl="true"
+25-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:12:13-39
+26        android:theme="@style/Theme.Nyakoba"
+26-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:13:13-49
+27        android:usesCleartextTraffic="true" >
+27-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:14:13-48
+28        <activity
+28-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:16:9-24:20
+29            android:name="com.nyakoba.MainActivity"
+29-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:17:17-45
+30            android:exported="true" >
+30-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:18:17-40
+31            <intent-filter>
+31-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:19:13-23:29
+32                <action android:name="android.intent.action.MAIN" />
+32-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:20:17-68
+32-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:20:25-66
+33
+34                <category android:name="android.intent.category.LAUNCHER" />
+34-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:22:17-76
+34-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:22:27-74
+35            </intent-filter>
+36        </activity>
 37        <activity
-37-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:29:9-31:52
-38            android:name="com.nyakoba.PrintActivity"
-38-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:30:17-46
+37-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:26:9-28:52
+38            android:name="com.nyakoba.WithDrawActivity"
+38-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:27:17-49
 39            android:exported="true" />
-39-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:31:17-40
-40
-41        <provider
-41-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dmutegi\.gradle\caches\transforms-3\7aa190a64baf6fbc676d0239e7c632fd\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-42            android:name="androidx.startup.InitializationProvider"
-42-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dmutegi\.gradle\caches\transforms-3\7aa190a64baf6fbc676d0239e7c632fd\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
-43            android:authorities="com.nyakoba.androidx-startup"
-43-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dmutegi\.gradle\caches\transforms-3\7aa190a64baf6fbc676d0239e7c632fd\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
-44            android:exported="false" >
-44-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dmutegi\.gradle\caches\transforms-3\7aa190a64baf6fbc676d0239e7c632fd\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
-45            <meta-data
-45-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dmutegi\.gradle\caches\transforms-3\7aa190a64baf6fbc676d0239e7c632fd\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-46                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-46-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dmutegi\.gradle\caches\transforms-3\7aa190a64baf6fbc676d0239e7c632fd\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
-47                android:value="androidx.startup" />
-47-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dmutegi\.gradle\caches\transforms-3\7aa190a64baf6fbc676d0239e7c632fd\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
+39-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:28:17-40
+40        <activity
+40-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:30:9-32:52
+41            android:name="com.nyakoba.PrintActivity"
+41-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:31:17-46
+42            android:exported="true" />
+42-->C:\Users\dmutegi\Documents\BW\ms\nyakoba\app\src\main\AndroidManifest.xml:32:17-40
+43
+44        <provider
+44-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dmutegi\.gradle\caches\transforms-3\7aa190a64baf6fbc676d0239e7c632fd\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+45            android:name="androidx.startup.InitializationProvider"
+45-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dmutegi\.gradle\caches\transforms-3\7aa190a64baf6fbc676d0239e7c632fd\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
+46            android:authorities="com.nyakoba.androidx-startup"
+46-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dmutegi\.gradle\caches\transforms-3\7aa190a64baf6fbc676d0239e7c632fd\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
+47            android:exported="false" >
+47-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dmutegi\.gradle\caches\transforms-3\7aa190a64baf6fbc676d0239e7c632fd\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
 48            <meta-data
-48-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\dmutegi\.gradle\caches\transforms-3\b0efca961984b7d67332bbddd191f0ab\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-49                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-49-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\dmutegi\.gradle\caches\transforms-3\b0efca961984b7d67332bbddd191f0ab\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+48-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dmutegi\.gradle\caches\transforms-3\7aa190a64baf6fbc676d0239e7c632fd\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+49                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+49-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dmutegi\.gradle\caches\transforms-3\7aa190a64baf6fbc676d0239e7c632fd\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
 50                android:value="androidx.startup" />
-50-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\dmutegi\.gradle\caches\transforms-3\b0efca961984b7d67332bbddd191f0ab\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-51        </provider>
-52    </application>
-53
-54</manifest>
+50-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dmutegi\.gradle\caches\transforms-3\7aa190a64baf6fbc676d0239e7c632fd\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
+51            <meta-data
+51-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\dmutegi\.gradle\caches\transforms-3\b0efca961984b7d67332bbddd191f0ab\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+52                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+52-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\dmutegi\.gradle\caches\transforms-3\b0efca961984b7d67332bbddd191f0ab\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+53                android:value="androidx.startup" />
+53-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\dmutegi\.gradle\caches\transforms-3\b0efca961984b7d67332bbddd191f0ab\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+54        </provider>
+55    </application>
+56
+57</manifest>

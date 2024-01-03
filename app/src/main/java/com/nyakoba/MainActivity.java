@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -69,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void userLogin(View view){
 
+        Toast.makeText(getApplicationContext(), getDeviceId(this), Toast.LENGTH_LONG).show();//display the response on screen
+
+
         final Context context = this;
         editTextUsername = findViewById(R.id.username);
         editTextPassword = findViewById(R.id.userpassword);
@@ -106,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
                     SharedPreferences sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedpreferences.edit();
                     editor.putString("username", response.get("agentName").toString());
+                    editor.putString("deviceid", getDeviceId(context));
                     editor.apply();
                     editor.commit();
 
@@ -137,6 +142,33 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public static String getDeviceId(Context context) {
+     //   Toast.makeText(context, "Start", Toast.LENGTH_LONG).show();//display the response on screen
+
+        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+
+        if (telephonyManager != null) {
+            try {
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
+                    // For Android 10 and above, use getImei() with READ_PRIVILEGED_PHONE_STATE permission
+
+                    Toast.makeText(context, telephonyManager.getSimSerialNumber(), Toast.LENGTH_LONG).show();//display the response on screen
+
+                    return telephonyManager.getImei();
+                } else {
+                    // For Android versions below 10, use getDeviceId() (requires READ_PHONE_STATE permission)
+                    return telephonyManager.getDeviceId();
+                }
+            } catch (SecurityException e) {
+                Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();//display the response on screen
+
+                Log.e("DeviceIdUtil", "Permission denied. Unable to get device ID.");
+            }
+        }
+
+        return null;
     }
 
 

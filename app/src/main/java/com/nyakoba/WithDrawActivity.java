@@ -94,51 +94,14 @@ public class WithDrawActivity extends AppCompatActivity {
                  //   new PrintActivity().print(response);
                    // Toast.makeText(context, "-->>" + response, Toast.LENGTH_LONG).show();//display the response on screen
 
-                    StringBuilder printStr = new StringBuilder();
+                    if(response.get("status").toString().equalsIgnoreCase("000")){
+                        print(response , teller);
+                    }
+                    else{
+                        Toast.makeText(context, response.get("description").toString(), Toast.LENGTH_LONG).show();//display the response on screen
 
-                    /**
-                     * {
-                     *     "status": "999",
-                     *     "description": "There are issues with today's receipt code.",
-                     *     "commission": 0.0,
-                     *     "exciseDuty": 0.0,
-                     *     "balanceAfter": 0.0,
-                     *     "previousBalance": 0.0,
-                     *     "relationship": null,
-                     *     "payeeName": null,
-                     *     "teller": null,
-                     *     "transactionNo": "821ce15188",
-                     *     "codd": null,
-                     *     "accname": null,
-                     *     "grNo": null,
-                     *     "amt": null,
-                     *     "amtInWords": null,
-                     *     "lastTeaPeriod": null
-                     * }
-                     */
+                    }
 
-
-                    printStr.append("NYAKOBA FARMERS RURAL SACCO.\n");
-                    printStr.append("Mobile No. +254-705-799-293.\n");
-                    printStr.append("CASH WITHDRAWAL RECEIPT \n [CUSTOMER COPY]\n");
-                    printStr.append("==== FEB 2023 TEA INCLUSIVE ====\n");
-                    printStr.append("                                       \n");
-                    printStr.append("Account Name: " + (response.has("accname") ? response.get("accname") : "Dummy") + "\n");
-                    printStr.append("RE\n");
-                    printStr.append("Grower No:      " + (response.has("grNo") ? response.get("grNo") : "Dummy GR NO") + "\n");
-                    printStr.append("Transaction No: " + (response.has("transactionNo") ? response.get("transactionNo") : "Dummy transactionno") + "\n");
-                    printStr.append("Transaction Amt: Ksh." + (response.has("amt") ? response.get("amt") : "0.0") + "\n");
-                    printStr.append("Commission:  " + (response.has("commission") ? response.get("commission") : "Dummy commission") + "\n");
-                    printStr.append("Excise Duty: " + (response.has("exciseDuty") ? response.get("exciseDuty") : "Dummy exciseduty") + "\n");
-                    printStr.append("Balance After: " + (response.has("balanceAfter") ? response.get("balanceAfter") : "Dummy balanceafter") + "\n");
-                    printStr.append((response.has("amtInWords") ? response.get("amtInWords") : "Dummy Word amount") + "\n");
-                    String payeeRelation = (response.has("relationship") ? response.get("relationship").toString() : "Dummy relationship");
-                    printStr.append("Payee Details: " + payeeRelation + "\n");
-                    printStr.append((response.has("payeeName") ? response.get("payeeName") : "Dummy payeename") + "\n");
-
-                    System.out.println("\n\n\n\n\n" + printStr + "\n\n\n\n");
-
-                    print(response , teller);
 
 
                 }
@@ -174,11 +137,10 @@ public class WithDrawActivity extends AppCompatActivity {
             posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
             posApiHelper.PrintStr("NYAKOBA FARMERS RURAL SACCO.\n");
             posApiHelper.PrintStr("Mobile No. +254-705-799-293.\n");
-            posApiHelper.PrintStr("CASH WITHDRAWAL RECEIPT \n [CUSTOMER COPY]\n");
+            posApiHelper.PrintStr("CASH WITHDRAWAL RECEIPT \n[CUSTOMER COPY]\n");
             posApiHelper.PrintStr("==== " + (response.has("lastTeaPeriod") ? response.get("lastTeaPeriod") : "FEB 2023 TEA INCLUSIVE") + " ====\n");
-            posApiHelper.PrintStr("****************************************\n");
+            posApiHelper.PrintStr("*********************************\n");
             posApiHelper.PrintStr("Account Name: " + (response.has("accname") ? response.get("accname") : "Dummy") + "\n");
-            posApiHelper.PrintStr("RE\n");
             posApiHelper.PrintStr("Grower No:      " + (response.has("grNo") ? response.get("grNo") : "Dummy GR NO") + "\n");
             posApiHelper.PrintStr("Transaction No: " + (response.has("transactionNo") ? response.get("transactionNo") : "Dummy transactionno") + "\n");
 
@@ -189,10 +151,10 @@ public class WithDrawActivity extends AppCompatActivity {
                 dateFormat = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss.SSS");
 
                 String formattedDate = myDateObj.format(dateFormat);
-                posApiHelper.PrintStr("Date&Time: " + formattedDate + "\n");
+                posApiHelper.PrintStr("Date: " + formattedDate + "\n");
             }
             else{
-                posApiHelper.PrintStr("Date&Time: " + new Date() + "\n");
+                posApiHelper.PrintStr("Date: " + new Date() + "\n");
             }
             posApiHelper.PrintStr("Previous Balance: Ksh." + (response.has("previousBalance") ? response.get("previousBalance") : "Dummy previousBalance") + "\n");
             posApiHelper.PrintSetBold(1);
@@ -201,13 +163,19 @@ public class WithDrawActivity extends AppCompatActivity {
             posApiHelper.PrintSetBold(0);
             posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
             posApiHelper.PrintStr("Commission:  " + (response.has("commission") ? response.get("commission") : "Dummy commission") + "\n");
-            posApiHelper.PrintStr("Excise Duty: " + (response.has("exciseDuty") ? response.get("exciseDuty") : "Dummy exciseduty") + "    " + (response.has("codd") ? response.get("codd") : "XYZ") + "\n");
+            posApiHelper.PrintStr("Excise Duty: " + (response.has("exciseDuty") ? response.get("exciseDuty") : "Dummy exciseduty") + "       " + (response.has("codd") ? response.get("codd") : "XYZ") + "\n");
             posApiHelper.PrintStr("Balance After: " + (response.has("balanceAfter") ? response.get("balanceAfter") : "Dummy balanceafter") + "\n");
             posApiHelper.PrintStr((response.has("amtInWords") ? response.get("amtInWords") : "Dummy Word amount") + "\n");
-            posApiHelper.PrintStr("********************************\n");
+            posApiHelper.PrintStr("******************************\n");
             String payeeRelation = (response.has("relationship") ? response.get("relationship").toString() : "Dummy relationship");
             posApiHelper.PrintStr("Payee Details: " + payeeRelation + "\n");
             posApiHelper.PrintStr((response.has("payeeName") ? response.get("payeeName") : "Dummy payeename") + "\n");
+            posApiHelper.PrintStr("                                       \n");
+            posApiHelper.PrintStr("   Signature or left thumb print\n");
+            posApiHelper.PrintStr("    Payee                Teller\n");
+            posApiHelper.PrintStr("                                       \n");
+            posApiHelper.PrintStr("                                       \n");
+            posApiHelper.PrintStr("                                       \n");
             posApiHelper.PrintStr("                                       \n");
             posApiHelper.PrintStr("********************************\n");
             posApiHelper.PrintStr("Thank You For Banking With Us.\n");

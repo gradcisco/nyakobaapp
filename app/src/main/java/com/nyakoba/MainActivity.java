@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
+import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
@@ -145,30 +146,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static String getDeviceId(Context context) {
-     //   Toast.makeText(context, "Start", Toast.LENGTH_LONG).show();//display the response on screen
+        String androidId = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
 
-        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        // Check for a fallback in case the Android ID is not available
 
-        if (telephonyManager != null) {
-            try {
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
-                    // For Android 10 and above, use getImei() with READ_PRIVILEGED_PHONE_STATE permission
-
-                    Toast.makeText(context, telephonyManager.getSimSerialNumber(), Toast.LENGTH_LONG).show();//display the response on screen
-
-                    return telephonyManager.getImei();
-                } else {
-                    // For Android versions below 10, use getDeviceId() (requires READ_PHONE_STATE permission)
-                    return telephonyManager.getDeviceId();
-                }
-            } catch (SecurityException e) {
-                Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();//display the response on screen
-
-                Log.e("DeviceIdUtil", "Permission denied. Unable to get device ID.");
-            }
-        }
-
-        return null;
+        return androidId;
     }
 
 

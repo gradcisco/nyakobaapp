@@ -1,16 +1,19 @@
 package com.nyakoba;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Message;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.StyleSpan;
 import android.view.View;
-import android.widget.*;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
@@ -64,32 +67,16 @@ public class WithDrawActivity extends AppCompatActivity {
 
         // Example JSON data
         JSONObject jsonData = new JSONObject();
-        String sessionName = "N/A";
         try {
-
-            SharedPreferences sharedpreferences = getSharedPreferences(MainActivity.MyPREFERENCES, Context.MODE_PRIVATE);
-            sessionName = sharedpreferences.getString("username", null);
 
             jsonData.put("uniqueno", growerNo);
             jsonData.put("id", idNo);
 
             getMemberDetails(jsonData, getApplicationContext());
 
-          //  Toast.makeText(getApplicationContext(), "Hello..." + response, Toast.LENGTH_LONG).show();//display the response on screen
-
-
-           // Toast.makeText(getApplicationContext(), "Hi..." + sessionName, Toast.LENGTH_LONG).show();//display the response on screen
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
-
-
-
-
-
 
     }
 
@@ -116,16 +103,10 @@ public class WithDrawActivity extends AppCompatActivity {
             jsonData.put("id", idNo);
             jsonData.put("amount", amount);
             jsonData.put("agentname", sessionName);
-            Toast.makeText(getApplicationContext(), "Withdraw..." + sessionName, Toast.LENGTH_LONG).show();//display the response on screen
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-      //  JSONObject res = new VolleyRequest(this, url).sendHttpReq(jsonData, getApplicationContext() , url);
-
-     //   Toast.makeText(getApplicationContext(), "Withdraw...>>>" + res , Toast.LENGTH_LONG).show();//display the response on screen
-
 
         sendReq(jsonData, this, sessionName);
 
@@ -146,29 +127,21 @@ public class WithDrawActivity extends AppCompatActivity {
             @Override
             public void onSuccess(JSONObject response) {
                 try{
-                    Toast.makeText(getApplicationContext(), "Hi..." + response, Toast.LENGTH_LONG).show();//display the response on screen
 
                     if(response.get("status").toString().equalsIgnoreCase("000")){
                         try{
                             balance = findViewById(R.id.balance);
                             memberName = findViewById(R.id.membname);
 
-                            SpannableString spannableString = new SpannableString("BALANCE::" +response.get("name").toString());
-                            // Apply bold style to the entire string
+                            SpannableString spannableString = new SpannableString("MEMBER NAME::" +response.get("name").toString());
                             spannableString.setSpan(new StyleSpan(Typeface.BOLD), 0, spannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-                            // Set the SpannableString to the EditText
                             memberName.setText(spannableString);
 
-                            SpannableString spannableStringBal = new SpannableString("MEMBER NAME::" + response.get("accbal").toString());
-                            // Apply bold style to the entire string
+                            SpannableString spannableStringBal = new SpannableString("BALANCE::" + response.get("accbal").toString());
                             spannableStringBal.setSpan(new StyleSpan(Typeface.BOLD), 0, spannableStringBal.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-                            // Set the SpannableString to the EditText
                             balance.setText(spannableStringBal);
 
-                           // memberName.setText(response.get("name").toString());
-                           // balance.setText(response.get("accbal").toString());
 
                             memberName.setEnabled(false);
                             balance.setEnabled(false);
@@ -207,10 +180,7 @@ public class WithDrawActivity extends AppCompatActivity {
 
             @Override
             public void onError(VolleyError error) {
-                // Handle the error
-                //new PrintActivity().print(null);
                 Toast.makeText(context, "error::" + error.toString(), Toast.LENGTH_LONG).show();//display the response on screen
-                // print(null);
 
             }
         });
@@ -228,8 +198,6 @@ public class WithDrawActivity extends AppCompatActivity {
             @Override
             public void onSuccess(JSONObject response) {
                 try{
-                 //   new PrintActivity().print(response);
-                   // Toast.makeText(context, "-->>" + response, Toast.LENGTH_LONG).show();//display the response on screen
 
                     if(response.get("status").toString().equalsIgnoreCase("000")){
                         print(response , teller);
@@ -238,8 +206,6 @@ public class WithDrawActivity extends AppCompatActivity {
                         Toast.makeText(context, response.get("description").toString(), Toast.LENGTH_LONG).show();//display the response on screen
 
                     }
-
-
 
                 }
                 catch (Exception ex){
@@ -251,25 +217,16 @@ public class WithDrawActivity extends AppCompatActivity {
 
             @Override
             public void onError(VolleyError error) {
-                // Handle the error
-                //new PrintActivity().print(null);
                 Toast.makeText(context, "error::" + error.toString(), Toast.LENGTH_LONG).show();//display the response on screen
-               // print(null);
-
             }
         });
     }
 
     public void print(JSONObject response , String teller) {
 
-     //   Toast.makeText(getApplicationContext(), "Starting Print", Toast.LENGTH_SHORT).show();//display the response on screen
-
-
         try{
-            Message msg = Message.obtain();
-            Message msg1 = new Message();
+
             ret = posApiHelper.PrintCheckStatus();
-         //   Toast.makeText(getApplicationContext(), "Starting Printer Status ==" + ret, Toast.LENGTH_SHORT).show();//display the response on screen
 
             posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
             posApiHelper.PrintStr("NYAKOBA FARMERS RURAL SACCO.\n");
@@ -323,21 +280,20 @@ public class WithDrawActivity extends AppCompatActivity {
             posApiHelper.PrintStr("                                       \n");
             ret = posApiHelper.PrintStart();
 
-           // posApiHelper.
-         //   Toast.makeText(getApplicationContext(), "End Print", Toast.LENGTH_SHORT).show();
+            changeActivity(getApplicationContext());
 
         }
         catch (Exception ex){
             Toast.makeText(getApplicationContext(), "Error = " + ex.getMessage(), Toast.LENGTH_SHORT).show();//display the response on screen
+            changeActivity(getApplicationContext());
 
         }
+   }
 
-
-
-        //   printThread = new Print_Thread(PRINT_TEST);
-        //  printThread.start();
-       // Toast.makeText(getApplicationContext(), "Finished Print", Toast.LENGTH_SHORT).show();
-    }
+   public void changeActivity(Context context){
+       Intent intent = new Intent(context, WithDrawActivity.class);
+       startActivity(intent);
+   }
 
 
 }

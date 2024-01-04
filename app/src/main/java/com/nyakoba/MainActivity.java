@@ -65,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-      //  requestPermission();
-       // PosApiHelper.getInstance().SysLogSwitch(1);
         setContentView(R.layout.activity_main);
 
     }
@@ -74,9 +72,6 @@ public class MainActivity extends AppCompatActivity {
     public void userLogin(View view){
 
         HttpsTrustManager.allowAllSSL();
-
-    //    Toast.makeText(getApplicationContext(), getDeviceId(this), Toast.LENGTH_LONG).show();//display the response on screen
-
 
         final Context context = this;
         editTextUsername = findViewById(R.id.username);
@@ -98,13 +93,11 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-
         // Create a VolleyRequest instance
         VolleyRequest volleyRequest = new VolleyRequest(this, url);
 
         // Make a JSON request
         volleyRequest.makeJsonObjectRequest(jsonData, new VolleyRequest.VolleyCallback() {
-
 
             @Override
             public void onSuccess(JSONObject response) {
@@ -125,10 +118,6 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                     else{
-/*
-                        Intent intent = new Intent(context, PrintActivity.class);
-                        startActivity(intent);
-*/
                         Toast.makeText(getApplicationContext(), "Please enter correct username and Password", Toast.LENGTH_LONG).show();
                     }
 
@@ -151,81 +140,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static String getDeviceId(Context context) {
-        String androidId = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
-
-        // Check for a fallback in case the Android ID is not available
-
-        return androidId;
+        return Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
     }
-
-
-
-    /**
-     * @Description: Request permission
-     * 申请权限
-     */
-    private void requestPermission() {
-        //检测是否有写的权限
-        //Check if there is write permission
-        int checkCallPhonePermission = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-
-        if (checkCallPhonePermission != PackageManager.PERMISSION_GRANTED) {
-            // 没有写文件的权限，去申请读写文件的权限，系统会弹出权限许可对话框
-            //Without the permission to Write, to apply for the permission to Read and Write, the system will pop up the permission dialog
-            ActivityCompat.requestPermissions(MainActivity.this, MY_PERMISSIONS, REQUEST_EXTERNAL_PERMISSION);
-        } else {
-            initViews();
-        }
-    }
-
-    /**
-     * a callback for request permission
-     * 注册权限申请回调
-     *
-     * @param requestCode  申请码
-     * @param permissions  申请的权限
-     * @param grantResults 结果
-     */
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-        if (requestCode == REQUEST_EXTERNAL_PERMISSION) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                initViews();
-            } else {
-//                Toast.makeText(MainActivity.this,R.string.title_permission,Toast.LENGTH_SHORT).show();
-                requestPermission();
-            }
-        }
-
-    }
-
-    private void initViews() {
-
-        setContentView(R.layout.activity_main);
-
-        mContext = MainActivity.this;
-
-        final Drawable[] itemImgs = {
-
-                getResources().getDrawable(R.mipmap.ic_launcher),
-
-                getResources().getDrawable(R.mipmap.ic_launcher_round)
-
-        };
-
-        final String[] itemTitles = {
-                getString(R.string.app_name)
-
-        };
-
-        final int sizeWidth = getResources().getDisplayMetrics().widthPixels / 25;
-
-    }
-
-
-
-
 
 }

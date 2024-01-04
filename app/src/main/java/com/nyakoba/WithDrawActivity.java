@@ -213,7 +213,12 @@ public class WithDrawActivity extends AppCompatActivity {
 
                     if (response.get("status").toString().equalsIgnoreCase("000")) {
 
-                        print(response, agentName);
+                        print(response, agentName , "[CUSTOMER COPY]");
+
+                        Thread.sleep(5000);
+
+                        print(response, agentName , "[TELLER COPY]");
+
                     } else {
                         Toast.makeText(context, response.get("description").toString(), Toast.LENGTH_LONG).show();//display the response on screen
 
@@ -233,7 +238,7 @@ public class WithDrawActivity extends AppCompatActivity {
         });
     }
 
-    public void print(JSONObject response, String agentName) {
+    public void print(JSONObject response, String agentName, String copy) {
 
         Toast.makeText(getApplicationContext(), "1", Toast.LENGTH_LONG).show();//display the response on screen
 
@@ -248,7 +253,7 @@ public class WithDrawActivity extends AppCompatActivity {
             posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
             posApiHelper.PrintStr("  NYAKOBA FARMERS RURAL SACCO.\n");
             posApiHelper.PrintStr("  Mobile No. +254-705-799-293.\n");
-            posApiHelper.PrintStr("   CASH WITHDRAWAL RECEIPT \n     [CUSTOMER COPY]\n");
+            posApiHelper.PrintStr("   CASH WITHDRAWAL RECEIPT \n     + " + copy + "\n");
             posApiHelper.PrintStr("==== " + (response.has("lastTeaPeriod") ? response.get("lastTeaPeriod") : "FEB 2023 TEA INCLUSIVE") + " ====\n");
             posApiHelper.PrintStr("*******************************\n");
             posApiHelper.PrintStr("Account Name: " + (response.has("accname") ? response.get("accname") : "Dummy") + "\n");

@@ -27,7 +27,6 @@ drawable username_icon
 drawable withdraw
 drawable write
 id amount
-id backB
 id balance
 id contributeCard
 id growerno

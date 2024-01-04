@@ -199,7 +199,11 @@ public class WithDrawActivity extends AppCompatActivity {
             public void onSuccess(JSONObject response) {
                 try{
 
+                    Toast.makeText(context, "desc::" + response.get("status"), Toast.LENGTH_LONG).show();//display the response on screen
+
+
                     if(response.get("status").toString().equalsIgnoreCase("000")){
+
                         print(response , teller);
                     }
                     else{
@@ -224,9 +228,15 @@ public class WithDrawActivity extends AppCompatActivity {
 
     public void print(JSONObject response , String teller) {
 
+        Toast.makeText(getApplicationContext(), "1", Toast.LENGTH_LONG).show();//display the response on screen
+
+
         try{
 
             ret = posApiHelper.PrintCheckStatus();
+
+            Toast.makeText(getApplicationContext(), "Print state==" + ret, Toast.LENGTH_LONG).show();//display the response on screen
+
 
             posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
             posApiHelper.PrintStr("NYAKOBA FARMERS RURAL SACCO.\n");
@@ -237,6 +247,8 @@ public class WithDrawActivity extends AppCompatActivity {
             posApiHelper.PrintStr("Account Name: " + (response.has("accname") ? response.get("accname") : "Dummy") + "\n");
             posApiHelper.PrintStr("Grower No:      " + (response.has("grNo") ? response.get("grNo") : "Dummy GR NO") + "\n");
             posApiHelper.PrintStr("Transaction No: " + (response.has("transactionNo") ? response.get("transactionNo") : "Dummy transactionno") + "\n");
+
+            Toast.makeText(getApplicationContext(), "2" , Toast.LENGTH_LONG).show();//display the response on screen
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 LocalDateTime myDateObj = LocalDateTime.now();

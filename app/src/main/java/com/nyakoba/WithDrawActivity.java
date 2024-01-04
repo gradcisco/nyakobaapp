@@ -251,9 +251,9 @@ public class WithDrawActivity extends AppCompatActivity {
 
 
             posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
-            posApiHelper.PrintStr("  NYAKOBA FARMERS RURAL SACCO.\n");
-            posApiHelper.PrintStr("  Mobile No. +254-705-799-293.\n");
-            posApiHelper.PrintStr("   CASH WITHDRAWAL RECEIPT \n     + " + copy + "\n");
+            posApiHelper.PrintStr("    NYAKOBA FARMERS RURAL SACCO.\n");
+            posApiHelper.PrintStr("    Mobile No. +254-705-799-293.\n");
+            posApiHelper.PrintStr("     CASH WITHDRAWAL RECEIPT \n            " + copy + "\n");
             posApiHelper.PrintStr("==== " + (response.has("lastTeaPeriod") ? response.get("lastTeaPeriod") : "FEB 2023 TEA INCLUSIVE") + " ====\n");
             posApiHelper.PrintStr("*******************************\n");
             posApiHelper.PrintStr("Account Name: " + (response.has("accname") ? response.get("accname") : "Dummy") + "\n");
@@ -300,7 +300,7 @@ public class WithDrawActivity extends AppCompatActivity {
             if (agentName.equalsIgnoreCase(tellerName)) {
                 posApiHelper.PrintStr("You were served by:- " + agentName + ".\n");
             } else {
-                posApiHelper.PrintStr("You were served by:- " + agentName + " and "+tellerName+"\n");
+                posApiHelper.PrintStr("You were served by:- " + agentName + " & "+tellerName+"\n");
             }
             posApiHelper.PrintStr("*******************************\n");
             posApiHelper.PrintStr("                                       \n");

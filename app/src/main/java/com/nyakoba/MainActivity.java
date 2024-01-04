@@ -69,6 +69,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        editTextUsername = findViewById(R.id.username);
+        editTextPassword = findViewById(R.id.userpassword);
+
+        editTextUsername.getText().clear();
+        editTextPassword.getText().clear();
+
+        // Your onResume code here
+    }
+
+
     public void userLogin(View view){
 
         HttpsTrustManager.allowAllSSL();

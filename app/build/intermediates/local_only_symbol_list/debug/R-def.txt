@@ -28,6 +28,7 @@ drawable withdraw
 drawable write
 id amount
 id backB
+id balance
 id contributeCard
 id growerno
 id idno
@@ -40,6 +41,8 @@ id learnCard
 id linearLayout
 id linearLayout2
 id logOutB
+id membname
+id membs
 id practiceCard
 id textView
 id textView1
@@ -50,6 +53,7 @@ id username
 id userpassword
 id view
 id withdrawbtn
+id withdrawbtns
 layout activity_main
 layout dashboard_main_print
 layout withdraw_main

@@ -71,6 +71,7 @@
                     android:textSize="32sp"
                     android:alpha="0.7"
                     android:drawableEnd="@drawable/username_icon"
+                    android:inputType="number"
                     android:textStyle="bold"/>
 
             <EditText

@@ -87,30 +87,54 @@
                     android:hint="Enter Grower No"
                     android:inputType="text"/>
 
+
+                <EditText
+                        android:id="@+id/idno"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter ID No"
+                        android:inputType="number"/>
+
+            <Button
+                    android:id="@+id/membs"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:onClick="getMemberDetails"
+                    android:text="Get Member Details"/>
+
             <EditText
-                    android:id="@+id/idno"
+                    android:id="@+id/balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter ID No"
-                    android:inputType="number"/>
+                    android:hint="Display balance"
+                    android:visibility="gone"
+                    android:inputType="none"/>
+
+            <EditText
+                    android:id="@+id/membname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Display Name"
+                    android:visibility="gone"
+                    android:inputType="none"/>
+
 
             <EditText
                     android:id="@+id/amount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Enter Amount"
+                    android:visibility="gone"
                     android:inputType="number"/>
 
 
 
-
-            <View
-                    android:layout_width="wrap_content"
-                    android:layout_height="10dp"/>
-            <com.google.android.material.button.MaterialButton
+            <Button
+                    android:id="@+id/withdrawbtns"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:onClick="submitWithdrawal"
+                    android:visibility="gone"
                     android:text="Submit"/>
 
 

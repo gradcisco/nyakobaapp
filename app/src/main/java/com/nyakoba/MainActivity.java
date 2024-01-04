@@ -54,7 +54,9 @@ public class MainActivity extends AppCompatActivity {
     //28461366 $ogar0609,N$
     //KB0430215
     //0944563
-    private String url = "http://192.168.100.45:8080/login";
+   // private String url = "http://192.168.100.45:8080/login";
+    private String url = "https://3758-41-90-64-183.ngrok-free.app/login";
+
 
     private EditText editTextUsername, editTextPassword;
 
@@ -71,7 +73,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void userLogin(View view){
 
-        Toast.makeText(getApplicationContext(), getDeviceId(this), Toast.LENGTH_LONG).show();//display the response on screen
+        HttpsTrustManager.allowAllSSL();
+
+    //    Toast.makeText(getApplicationContext(), getDeviceId(this), Toast.LENGTH_LONG).show();//display the response on screen
 
 
         final Context context = this;
@@ -87,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             jsonData.put("username", username);
             jsonData.put("password", password);
+            jsonData.put("deviceid", getDeviceId(this));
         } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();//display the response on screen

@@ -2,13 +2,15 @@ package com.nyakoba;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.StyleSpan;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.Toast;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
@@ -32,9 +34,11 @@ public class WithDrawActivity extends AppCompatActivity {
     private StringRequest mStringRequest;
 
     private ProgressBar loadingPB;
-    private String url = "http://192.168.100.45:8080/withdrawal";
+    private String url = "https://3758-41-90-64-183.ngrok-free.app/withdrawal";
+    private String member_url = "https://3758-41-90-64-183.ngrok-free.app/clientdetails";
 
-    private EditText editTextGrowerNo, editTextIdNo, editTextAmount;
+    private EditText editTextGrowerNo, editTextIdNo, editTextAmount, balance , memberName;
+    private Button withdrawBtn, getMembBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,11 +46,58 @@ public class WithDrawActivity extends AppCompatActivity {
         setContentView(R.layout.withdraw_main);
     }
 
-    public void submitWithdrawal(View view){
+    public void getMemberDetails(View view){
+
+        HttpsTrustManager.allowAllSSL();
 
         editTextGrowerNo = findViewById(R.id.growerno);
         editTextIdNo = findViewById(R.id.idno);
+
         editTextAmount = findViewById(R.id.amount);
+        withdrawBtn = findViewById(R.id.withdrawbtns);
+        getMembBtn = findViewById(R.id.membs);
+
+
+        String growerNo = editTextGrowerNo.getText().toString();
+        String idNo = editTextIdNo.getText().toString();
+
+
+        // Example JSON data
+        JSONObject jsonData = new JSONObject();
+        String sessionName = "N/A";
+        try {
+
+            SharedPreferences sharedpreferences = getSharedPreferences(MainActivity.MyPREFERENCES, Context.MODE_PRIVATE);
+            sessionName = sharedpreferences.getString("username", null);
+
+            jsonData.put("uniqueno", growerNo);
+            jsonData.put("id", idNo);
+
+            getMemberDetails(jsonData, getApplicationContext());
+
+          //  Toast.makeText(getApplicationContext(), "Hello..." + response, Toast.LENGTH_LONG).show();//display the response on screen
+
+
+           // Toast.makeText(getApplicationContext(), "Hi..." + sessionName, Toast.LENGTH_LONG).show();//display the response on screen
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+
+
+
+
+
+
+    }
+
+
+    public void submitWithdrawal(View view){
+
+        HttpsTrustManager.allowAllSSL();
+
 
         String growerNo = editTextGrowerNo.getText().toString();
         String idNo = editTextIdNo.getText().toString();
@@ -77,6 +128,92 @@ public class WithDrawActivity extends AppCompatActivity {
 
 
         sendReq(jsonData, this, sessionName);
+
+        editTextGrowerNo.getText().clear();
+        editTextIdNo.getText().clear();
+        editTextAmount.getText().clear();
+
+    }
+
+    public void getMemberDetails(JSONObject jsonData , Context context){
+        // Create a VolleyRequest instance
+        VolleyRequest volleyRequest = new VolleyRequest(this, member_url);
+
+        // Make a JSON request
+        volleyRequest.makeJsonObjectRequest(jsonData, new VolleyRequest.VolleyCallback() {
+
+
+            @Override
+            public void onSuccess(JSONObject response) {
+                try{
+                    Toast.makeText(getApplicationContext(), "Hi..." + response, Toast.LENGTH_LONG).show();//display the response on screen
+
+                    if(response.get("status").toString().equalsIgnoreCase("000")){
+                        try{
+                            balance = findViewById(R.id.balance);
+                            memberName = findViewById(R.id.membname);
+
+                            SpannableString spannableString = new SpannableString("BALANCE::" +response.get("name").toString());
+                            // Apply bold style to the entire string
+                            spannableString.setSpan(new StyleSpan(Typeface.BOLD), 0, spannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                            // Set the SpannableString to the EditText
+                            memberName.setText(spannableString);
+
+                            SpannableString spannableStringBal = new SpannableString("MEMBER NAME::" + response.get("accbal").toString());
+                            // Apply bold style to the entire string
+                            spannableStringBal.setSpan(new StyleSpan(Typeface.BOLD), 0, spannableStringBal.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                            // Set the SpannableString to the EditText
+                            balance.setText(spannableStringBal);
+
+                           // memberName.setText(response.get("name").toString());
+                           // balance.setText(response.get("accbal").toString());
+
+                            memberName.setEnabled(false);
+                            balance.setEnabled(false);
+
+                            balance.setTextColor(getResources().getColor(R.color.white));
+                            memberName.setTextColor(getResources().getColor(R.color.white));
+                            balance.setBackgroundColor(getResources().getColor(R.color.teal_200));
+                            memberName.setBackgroundColor(getResources().getColor(R.color.teal_200));
+
+
+                            memberName.setVisibility(View.VISIBLE);
+                            balance.setVisibility(View.VISIBLE);
+                            editTextAmount.setVisibility(View.VISIBLE);
+                            getMembBtn.setVisibility(View.GONE);
+                            withdrawBtn.setVisibility(View.VISIBLE);
+                        }
+                        catch (Exception e){
+                            Toast.makeText(getApplicationContext(), "Hello..." + e.getMessage(), Toast.LENGTH_LONG).show();//display the response on screen
+
+                        }
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(), "Hello..." + response.get("status"), Toast.LENGTH_LONG).show();//display the response on screen
+
+                    }
+
+
+
+                }
+                catch (Exception ex){
+                    Toast.makeText(context, ex.getMessage(), Toast.LENGTH_LONG).show();//display the response on screen
+
+                }
+
+            }
+
+            @Override
+            public void onError(VolleyError error) {
+                // Handle the error
+                //new PrintActivity().print(null);
+                Toast.makeText(context, "error::" + error.toString(), Toast.LENGTH_LONG).show();//display the response on screen
+                // print(null);
+
+            }
+        });
 
     }
 
@@ -139,7 +276,7 @@ public class WithDrawActivity extends AppCompatActivity {
             posApiHelper.PrintStr("Mobile No. +254-705-799-293.\n");
             posApiHelper.PrintStr("CASH WITHDRAWAL RECEIPT \n[CUSTOMER COPY]\n");
             posApiHelper.PrintStr("==== " + (response.has("lastTeaPeriod") ? response.get("lastTeaPeriod") : "FEB 2023 TEA INCLUSIVE") + " ====\n");
-            posApiHelper.PrintStr("*********************************\n");
+            posApiHelper.PrintStr("********************************\n");
             posApiHelper.PrintStr("Account Name: " + (response.has("accname") ? response.get("accname") : "Dummy") + "\n");
             posApiHelper.PrintStr("Grower No:      " + (response.has("grNo") ? response.get("grNo") : "Dummy GR NO") + "\n");
             posApiHelper.PrintStr("Transaction No: " + (response.has("transactionNo") ? response.get("transactionNo") : "Dummy transactionno") + "\n");
@@ -170,7 +307,7 @@ public class WithDrawActivity extends AppCompatActivity {
             String payeeRelation = (response.has("relationship") ? response.get("relationship").toString() : "Dummy relationship");
             posApiHelper.PrintStr("Payee Details: " + payeeRelation + "\n");
             posApiHelper.PrintStr((response.has("payeeName") ? response.get("payeeName") : "Dummy payeename") + "\n");
-            posApiHelper.PrintStr("                                       \n");
+            posApiHelper.PrintStr("********************************\n");
             posApiHelper.PrintStr("   Signature or left thumb print\n");
             posApiHelper.PrintStr("    Payee                Teller\n");
             posApiHelper.PrintStr("                                       \n");

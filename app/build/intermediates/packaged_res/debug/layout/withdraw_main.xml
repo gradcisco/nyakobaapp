@@ -33,6 +33,21 @@
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+            android:id="@+id/logOutB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp"
+            android:src="@drawable/ic_logout"
+            android:onClick="login"
+            app:layout_constraintCircleRadius="24dp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintTop_toTopOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingTop="20dp"
+            tools:layout_editor_absoluteY="88dp" tools:layout_editor_absoluteX="176dp"/>
+
 
     <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -116,16 +131,7 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-    <ImageButton
-            android:id="@+id/logOutB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackground"
-            android:padding="8dp"
-            android:src="@drawable/ic_logout"
-            android:onClick="login"
-            app:layout_constraintCircleRadius="24dp"
-            tools:layout_editor_absoluteY="88dp" tools:layout_editor_absoluteX="176dp"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

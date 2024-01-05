@@ -67,7 +67,7 @@
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="UserName"
+                    android:text="User id"
                     android:textSize="32sp"
                     android:alpha="0.7"
                     android:drawableEnd="@drawable/username_icon"

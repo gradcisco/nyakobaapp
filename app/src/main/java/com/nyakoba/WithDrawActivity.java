@@ -251,9 +251,9 @@ public class WithDrawActivity extends AppCompatActivity {
 
 
             posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
-            posApiHelper.PrintStr("    NYAKOBA FARMERS RURAL SACCO.\n");
-            posApiHelper.PrintStr("    Mobile No. +254-705-799-293.\n");
-            posApiHelper.PrintStr("     CASH WITHDRAWAL RECEIPT \n            " + copy + "\n");
+            posApiHelper.PrintStr("   NYAKOBA FARMERS RURAL SACCO.\n");
+            posApiHelper.PrintStr("   Mobile No. +254-705-799-293.\n");
+            posApiHelper.PrintStr("     CASH WITHDRAWAL RECEIPT \n          " + copy + "\n");
             posApiHelper.PrintStr("==== " + (response.has("lastTeaPeriod") ? response.get("lastTeaPeriod") : "FEB 2023 TEA INCLUSIVE") + " ====\n");
             posApiHelper.PrintStr("*******************************\n");
             posApiHelper.PrintStr("Account Name: " + (response.has("accname") ? response.get("accname") : "Dummy") + "\n");
@@ -282,7 +282,11 @@ public class WithDrawActivity extends AppCompatActivity {
             posApiHelper.PrintStr("Commission:  " + (response.has("commission") ? response.get("commission") : "Dummy commission") + "\n");
             posApiHelper.PrintStr("Excise Duty: " + (response.has("exciseDuty") ? response.get("exciseDuty") : "Dummy exciseduty") + "          " + (response.has("codd") ? response.get("codd") : "XYZ") + "\n");
             posApiHelper.PrintStr("Balance After: " + (response.has("balanceAfter") ? response.get("balanceAfter") : "Dummy balanceafter") + "\n");
+            posApiHelper.PrintSetBold(1);
+            posApiHelper.PrintSetFont((byte) 34, (byte) 34, (byte) 0x33);
             posApiHelper.PrintStr((response.has("amtInWords") ? response.get("amtInWords") : "Dummy Word amount") + "\n");
+            posApiHelper.PrintSetBold(0);
+            posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
             posApiHelper.PrintStr("*******************************\n");
             String payeeRelation = (response.has("relationship") ? response.get("relationship").toString() : "Dummy relationship");
             posApiHelper.PrintStr("Payee Details: " + payeeRelation + "\n");

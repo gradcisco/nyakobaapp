@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     //28461366 $ogar0609,N$
     //KB0430215
     //0944563
-    private String url = "http://192.168.100.44:8080/login";
+    private String url = "https://4661-41-90-68-214.ngrok-free.app/login";
     //private String url = "https://4661-41-90-68-214.ngrok-free.app/login";
 
 

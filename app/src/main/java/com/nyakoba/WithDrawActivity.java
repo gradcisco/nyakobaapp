@@ -58,6 +58,7 @@ public class WithDrawActivity extends AppCompatActivity {
         editor.clear(); // Remove all data
         editor.apply();
 
+
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
@@ -240,7 +241,7 @@ public class WithDrawActivity extends AppCompatActivity {
 
     public void print(JSONObject response, String agentName, String copy) {
 
-        Toast.makeText(getApplicationContext(), "1", Toast.LENGTH_LONG).show();//display the response on screen
+   //     Toast.makeText(getApplicationContext(), "1", Toast.LENGTH_LONG).show();//display the response on screen
 
 
         try {

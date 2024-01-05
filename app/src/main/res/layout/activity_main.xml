@@ -67,18 +67,17 @@
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="UserName"
+                    android:text="User id"
                     android:textSize="32sp"
                     android:alpha="0.7"
                     android:drawableEnd="@drawable/username_icon"
-                    android:inputType="number"
                     android:textStyle="bold"/>
 
             <EditText
                     android:id="@+id/username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"/>
+                    android:inputType="number"/>
 
             <View
                     android:layout_width="wrap_content"

@@ -79,6 +79,8 @@ public class MainActivityBkp extends AppCompatActivity {
 
                 Intent intent = new Intent(context, WithDrawActivity.class);
                 startActivity(intent);
+                editTextUsername.getText().clear();
+                editTextPassword.getText().clear();
             }
 
             @Override

@@ -1,16 +1,19 @@
 package com.nyakoba;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Message;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.StyleSpan;
 import android.view.View;
-import android.widget.*;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
@@ -34,10 +37,10 @@ public class WithDrawActivity extends AppCompatActivity {
     private StringRequest mStringRequest;
 
     private ProgressBar loadingPB;
-    private String url = "https://3758-41-90-64-183.ngrok-free.app/withdrawal";
-    private String member_url = "https://3758-41-90-64-183.ngrok-free.app/clientdetails";
+    private String url = "http://192.168.100.44:8080/withdrawal";
+    private String member_url = "http://192.168.100.44:8080/clientdetails";
 
-    private EditText editTextGrowerNo, editTextIdNo, editTextAmount, balance , memberName;
+    private EditText editTextGrowerNo, editTextIdNo, editTextAmount, balance, memberName;
     private Button withdrawBtn, getMembBtn;
 
     @Override
@@ -46,7 +49,21 @@ public class WithDrawActivity extends AppCompatActivity {
         setContentView(R.layout.withdraw_main);
     }
 
-    public void getMemberDetails(View view){
+    public void login(View view){
+        Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
+
+        // Clear session data from SharedPreferences
+        SharedPreferences preferences = getSharedPreferences(MainActivity.MyPREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.clear(); // Remove all data
+        editor.apply();
+
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void getMemberDetails(View view) {
 
         HttpsTrustManager.allowAllSSL();
 
@@ -64,37 +81,21 @@ public class WithDrawActivity extends AppCompatActivity {
 
         // Example JSON data
         JSONObject jsonData = new JSONObject();
-        String sessionName = "N/A";
         try {
-
-            SharedPreferences sharedpreferences = getSharedPreferences(MainActivity.MyPREFERENCES, Context.MODE_PRIVATE);
-            sessionName = sharedpreferences.getString("username", null);
 
             jsonData.put("uniqueno", growerNo);
             jsonData.put("id", idNo);
 
             getMemberDetails(jsonData, getApplicationContext());
 
-          //  Toast.makeText(getApplicationContext(), "Hello..." + response, Toast.LENGTH_LONG).show();//display the response on screen
-
-
-           // Toast.makeText(getApplicationContext(), "Hi..." + sessionName, Toast.LENGTH_LONG).show();//display the response on screen
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-
-
-
-
-
-
-
     }
 
 
-    public void submitWithdrawal(View view){
+    public void submitWithdrawal(View view) {
 
         HttpsTrustManager.allowAllSSL();
 
@@ -116,16 +117,10 @@ public class WithDrawActivity extends AppCompatActivity {
             jsonData.put("id", idNo);
             jsonData.put("amount", amount);
             jsonData.put("agentname", sessionName);
-            Toast.makeText(getApplicationContext(), "Withdraw..." + sessionName, Toast.LENGTH_LONG).show();//display the response on screen
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-      //  JSONObject res = new VolleyRequest(this, url).sendHttpReq(jsonData, getApplicationContext() , url);
-
-     //   Toast.makeText(getApplicationContext(), "Withdraw...>>>" + res , Toast.LENGTH_LONG).show();//display the response on screen
-
 
         sendReq(jsonData, this, sessionName);
 
@@ -135,7 +130,7 @@ public class WithDrawActivity extends AppCompatActivity {
 
     }
 
-    public void getMemberDetails(JSONObject jsonData , Context context){
+    public void getMemberDetails(JSONObject jsonData, Context context) {
         // Create a VolleyRequest instance
         VolleyRequest volleyRequest = new VolleyRequest(this, member_url);
 
@@ -145,30 +140,22 @@ public class WithDrawActivity extends AppCompatActivity {
 
             @Override
             public void onSuccess(JSONObject response) {
-                try{
-                    Toast.makeText(getApplicationContext(), "Hi..." + response, Toast.LENGTH_LONG).show();//display the response on screen
+                try {
 
-                    if(response.get("status").toString().equalsIgnoreCase("000")){
-                        try{
+                    if (response.get("status").toString().equalsIgnoreCase("000")) {
+                        try {
                             balance = findViewById(R.id.balance);
                             memberName = findViewById(R.id.membname);
 
-                            SpannableString spannableString = new SpannableString("BALANCE::" +response.get("name").toString());
-                            // Apply bold style to the entire string
+                            SpannableString spannableString = new SpannableString("MEMBER NAME::" + response.get("name").toString());
                             spannableString.setSpan(new StyleSpan(Typeface.BOLD), 0, spannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-                            // Set the SpannableString to the EditText
                             memberName.setText(spannableString);
 
-                            SpannableString spannableStringBal = new SpannableString("MEMBER NAME::" + response.get("accbal").toString());
-                            // Apply bold style to the entire string
+                            SpannableString spannableStringBal = new SpannableString("BALANCE::" + response.get("accbal").toString());
                             spannableStringBal.setSpan(new StyleSpan(Typeface.BOLD), 0, spannableStringBal.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-                            // Set the SpannableString to the EditText
                             balance.setText(spannableStringBal);
 
-                           // memberName.setText(response.get("name").toString());
-                           // balance.setText(response.get("accbal").toString());
 
                             memberName.setEnabled(false);
                             balance.setEnabled(false);
@@ -184,21 +171,17 @@ public class WithDrawActivity extends AppCompatActivity {
                             editTextAmount.setVisibility(View.VISIBLE);
                             getMembBtn.setVisibility(View.GONE);
                             withdrawBtn.setVisibility(View.VISIBLE);
-                        }
-                        catch (Exception e){
+                        } catch (Exception e) {
                             Toast.makeText(getApplicationContext(), "Hello..." + e.getMessage(), Toast.LENGTH_LONG).show();//display the response on screen
 
                         }
-                    }
-                    else{
+                    } else {
                         Toast.makeText(getApplicationContext(), "Hello..." + response.get("status"), Toast.LENGTH_LONG).show();//display the response on screen
 
                     }
 
 
-
-                }
-                catch (Exception ex){
+                } catch (Exception ex) {
                     Toast.makeText(context, ex.getMessage(), Toast.LENGTH_LONG).show();//display the response on screen
 
                 }
@@ -207,17 +190,14 @@ public class WithDrawActivity extends AppCompatActivity {
 
             @Override
             public void onError(VolleyError error) {
-                // Handle the error
-                //new PrintActivity().print(null);
                 Toast.makeText(context, "error::" + error.toString(), Toast.LENGTH_LONG).show();//display the response on screen
-                // print(null);
 
             }
         });
 
     }
 
-    public void sendReq(JSONObject jsonData , Context context, String teller){
+    public void sendReq(JSONObject jsonData, Context context, String agentName) {
         // Create a VolleyRequest instance
         VolleyRequest volleyRequest = new VolleyRequest(this, url);
 
@@ -227,22 +207,25 @@ public class WithDrawActivity extends AppCompatActivity {
 
             @Override
             public void onSuccess(JSONObject response) {
-                try{
-                 //   new PrintActivity().print(response);
-                   // Toast.makeText(context, "-->>" + response, Toast.LENGTH_LONG).show();//display the response on screen
+                try {
 
-                    if(response.get("status").toString().equalsIgnoreCase("000")){
-                        print(response , teller);
-                    }
-                    else{
+                    Toast.makeText(context, "desc::" + response.get("status"), Toast.LENGTH_LONG).show();//display the response on screen
+
+
+                    if (response.get("status").toString().equalsIgnoreCase("000")) {
+
+                        print(response, agentName , "[CUSTOMER COPY]");
+
+                        Thread.sleep(5000);
+
+                        print(response, agentName , "[TELLER COPY]");
+
+                    } else {
                         Toast.makeText(context, response.get("description").toString(), Toast.LENGTH_LONG).show();//display the response on screen
 
                     }
 
-
-
-                }
-                catch (Exception ex){
+                } catch (Exception ex) {
                     Toast.makeText(context, ex.getMessage(), Toast.LENGTH_LONG).show();//display the response on screen
 
                 }
@@ -251,35 +234,34 @@ public class WithDrawActivity extends AppCompatActivity {
 
             @Override
             public void onError(VolleyError error) {
-                // Handle the error
-                //new PrintActivity().print(null);
                 Toast.makeText(context, "error::" + error.toString(), Toast.LENGTH_LONG).show();//display the response on screen
-               // print(null);
-
             }
         });
     }
 
-    public void print(JSONObject response , String teller) {
+    public void print(JSONObject response, String agentName, String copy) {
 
-     //   Toast.makeText(getApplicationContext(), "Starting Print", Toast.LENGTH_SHORT).show();//display the response on screen
+   //     Toast.makeText(getApplicationContext(), "1", Toast.LENGTH_LONG).show();//display the response on screen
 
 
-        try{
-            Message msg = Message.obtain();
-            Message msg1 = new Message();
+        try {
+
             ret = posApiHelper.PrintCheckStatus();
-         //   Toast.makeText(getApplicationContext(), "Starting Printer Status ==" + ret, Toast.LENGTH_SHORT).show();//display the response on screen
+
+            Toast.makeText(getApplicationContext(), "Print state==" + ret, Toast.LENGTH_LONG).show();//display the response on screen
+
 
             posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
-            posApiHelper.PrintStr("NYAKOBA FARMERS RURAL SACCO.\n");
-            posApiHelper.PrintStr("Mobile No. +254-705-799-293.\n");
-            posApiHelper.PrintStr("CASH WITHDRAWAL RECEIPT \n[CUSTOMER COPY]\n");
+            posApiHelper.PrintStr("   NYAKOBA FARMERS RURAL SACCO.\n");
+            posApiHelper.PrintStr("   Mobile No. +254-705-799-293.\n");
+            posApiHelper.PrintStr("     CASH WITHDRAWAL RECEIPT \n          " + copy + "\n");
             posApiHelper.PrintStr("==== " + (response.has("lastTeaPeriod") ? response.get("lastTeaPeriod") : "FEB 2023 TEA INCLUSIVE") + " ====\n");
-            posApiHelper.PrintStr("********************************\n");
+            posApiHelper.PrintStr("*******************************\n");
             posApiHelper.PrintStr("Account Name: " + (response.has("accname") ? response.get("accname") : "Dummy") + "\n");
             posApiHelper.PrintStr("Grower No:      " + (response.has("grNo") ? response.get("grNo") : "Dummy GR NO") + "\n");
             posApiHelper.PrintStr("Transaction No: " + (response.has("transactionNo") ? response.get("transactionNo") : "Dummy transactionno") + "\n");
+
+            Toast.makeText(getApplicationContext(), "2", Toast.LENGTH_LONG).show();//display the response on screen
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 LocalDateTime myDateObj = LocalDateTime.now();
@@ -289,8 +271,7 @@ public class WithDrawActivity extends AppCompatActivity {
 
                 String formattedDate = myDateObj.format(dateFormat);
                 posApiHelper.PrintStr("Date: " + formattedDate + "\n");
-            }
-            else{
+            } else {
                 posApiHelper.PrintStr("Date: " + new Date() + "\n");
             }
             posApiHelper.PrintStr("Previous Balance: Ksh." + (response.has("previousBalance") ? response.get("previousBalance") : "Dummy previousBalance") + "\n");
@@ -300,43 +281,50 @@ public class WithDrawActivity extends AppCompatActivity {
             posApiHelper.PrintSetBold(0);
             posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
             posApiHelper.PrintStr("Commission:  " + (response.has("commission") ? response.get("commission") : "Dummy commission") + "\n");
-            posApiHelper.PrintStr("Excise Duty: " + (response.has("exciseDuty") ? response.get("exciseDuty") : "Dummy exciseduty") + "       " + (response.has("codd") ? response.get("codd") : "XYZ") + "\n");
+            posApiHelper.PrintStr("Excise Duty: " + (response.has("exciseDuty") ? response.get("exciseDuty") : "Dummy exciseduty") + "          " + (response.has("codd") ? response.get("codd") : "XYZ") + "\n");
             posApiHelper.PrintStr("Balance After: " + (response.has("balanceAfter") ? response.get("balanceAfter") : "Dummy balanceafter") + "\n");
+            posApiHelper.PrintSetBold(1);
+            posApiHelper.PrintSetFont((byte) 34, (byte) 34, (byte) 0x33);
             posApiHelper.PrintStr((response.has("amtInWords") ? response.get("amtInWords") : "Dummy Word amount") + "\n");
-            posApiHelper.PrintStr("******************************\n");
+            posApiHelper.PrintSetBold(0);
+            posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
+            posApiHelper.PrintStr("*******************************\n");
             String payeeRelation = (response.has("relationship") ? response.get("relationship").toString() : "Dummy relationship");
             posApiHelper.PrintStr("Payee Details: " + payeeRelation + "\n");
             posApiHelper.PrintStr((response.has("payeeName") ? response.get("payeeName") : "Dummy payeename") + "\n");
-            posApiHelper.PrintStr("********************************\n");
-            posApiHelper.PrintStr("   Signature or left thumb print\n");
-            posApiHelper.PrintStr("    Payee                Teller\n");
+            posApiHelper.PrintStr("*******************************\n");
+            posApiHelper.PrintStr(" Signature or left thumb print\n");
+            posApiHelper.PrintStr("   Payee               Teller\n");
             posApiHelper.PrintStr("                                       \n");
             posApiHelper.PrintStr("                                       \n");
             posApiHelper.PrintStr("                                       \n");
             posApiHelper.PrintStr("                                       \n");
-            posApiHelper.PrintStr("********************************\n");
-            posApiHelper.PrintStr("Thank You For Banking With Us.\n");
-            posApiHelper.PrintStr("You were served by:- " + teller + ".\n");
-            posApiHelper.PrintStr("********************************\n");
+            posApiHelper.PrintStr("*******************************\n");
+            posApiHelper.PrintStr("Thank you for banking with us.\n");
+            String tellerName = (response.has("teller") ? response.get("teller").toString() : "Dummy teller");
+            if (agentName.equalsIgnoreCase(tellerName)) {
+                posApiHelper.PrintStr("You were served by:- " + agentName + ".\n");
+            } else {
+                posApiHelper.PrintStr("You were served by:- " + agentName + " & "+tellerName+"\n");
+            }
+            posApiHelper.PrintStr("*******************************\n");
             posApiHelper.PrintStr("                                       \n");
             posApiHelper.PrintStr("                                       \n");
             posApiHelper.PrintStr("                                       \n");
             ret = posApiHelper.PrintStart();
 
-           // posApiHelper.
-         //   Toast.makeText(getApplicationContext(), "End Print", Toast.LENGTH_SHORT).show();
+            changeActivity(getApplicationContext());
 
-        }
-        catch (Exception ex){
+        } catch (Exception ex) {
             Toast.makeText(getApplicationContext(), "Error = " + ex.getMessage(), Toast.LENGTH_SHORT).show();//display the response on screen
+            changeActivity(getApplicationContext());
 
         }
+    }
 
-
-
-        //   printThread = new Print_Thread(PRINT_TEST);
-        //  printThread.start();
-       // Toast.makeText(getApplicationContext(), "Finished Print", Toast.LENGTH_SHORT).show();
+    public void changeActivity(Context context) {
+        Intent intent = new Intent(context, WithDrawActivity.class);
+        startActivity(intent);
     }
 
 

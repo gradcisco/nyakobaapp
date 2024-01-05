@@ -9,7 +9,7 @@
         tools:context=".MainActivity"
         tools:ignore="HardcodedText">
 
-    <View
+   <View
             android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="128dp"
@@ -18,18 +18,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-            android:id="@+id/withdrawbtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:background="?attr/selectableItemBackground"
-            android:padding="8dp"
-            android:src="@drawable/ic_back"
-            android:onClick="print"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
             android:id="@+id/textView"
@@ -43,21 +31,22 @@
             android:textColor="@color/white"
             android:textSize="28sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/backB"
             app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
             android:id="@+id/logOutB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
             android:background="?attr/selectableItemBackground"
             android:padding="8dp"
             android:src="@drawable/ic_logout"
+            android:onClick="login"
             app:layout_constraintCircleRadius="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constrainedWidth="true"
+            app:layout_constraintTop_toTopOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingTop="20dp"
+            tools:layout_editor_absoluteY="88dp" tools:layout_editor_absoluteX="176dp"/>
 
 
     <androidx.cardview.widget.CardView
@@ -142,8 +131,6 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
-
 
 
 

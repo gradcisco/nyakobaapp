@@ -37,8 +37,8 @@ public class WithDrawActivity extends AppCompatActivity {
     private StringRequest mStringRequest;
 
     private ProgressBar loadingPB;
-    private String url = "https://4661-41-90-68-214.ngrok-free.app/withdrawal";
-    private String member_url = "https://4661-41-90-68-214.ngrok-free.app/clientdetails";
+    private String url = "https://8df2-41-81-185-88.ngrok-free.app/withdrawal";
+    private String member_url = "https://8df2-41-81-185-88.ngrok-free.app/clientdetails";
 
     private EditText editTextGrowerNo, editTextIdNo, editTextAmount, balance, memberName;
     private Button withdrawBtn, getMembBtn;

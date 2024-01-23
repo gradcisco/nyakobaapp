@@ -40,7 +40,7 @@
             android:background="?attr/selectableItemBackground"
             android:padding="8dp"
             android:src="@drawable/ic_logout"
-            android:onClick="login"
+            android:onClick="printTest"
             app:layout_constraintCircleRadius="24dp"
             app:layout_constrainedWidth="true"
             app:layout_constraintTop_toTopOf="@+id/view"

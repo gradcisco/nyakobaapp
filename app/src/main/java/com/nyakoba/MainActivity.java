@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -28,13 +29,19 @@ import com.nyakoba.util.Session;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 public class MainActivity extends AppCompatActivity {
+
+    PosApiHelper posApiHelper = PosApiHelper.getInstance();
+    int ret = -1;
 
     Context mContext;
     public static Session session = new Session();
@@ -155,6 +162,31 @@ public class MainActivity extends AppCompatActivity {
 
     public static String getDeviceId(Context context) {
         return Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
+    }
+
+    public void printTest(View view){
+
+        try{
+        ret = posApiHelper.PrintCheckStatus();
+
+        Toast.makeText(getApplicationContext(), "Print state==" + ret, Toast.LENGTH_LONG).show();//display the response on screen
+
+
+
+        posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
+        posApiHelper.PrintStr("  NYAKOBA FARMERS RURAL SACCO.\n");
+        posApiHelper.PrintStr("  Mobile No. +254-705-799-293.\n");
+        posApiHelper.PrintStr("     CASH WITHDRAWAL RECEIPT \n");
+
+        Toast.makeText(getApplicationContext(), "2", Toast.LENGTH_LONG).show();//display the response on screen
+        ret = posApiHelper.PrintStart();
+
+
+    } catch (Exception ex) {
+        Toast.makeText(getApplicationContext(), "Error = " + ex.getMessage(), Toast.LENGTH_SHORT).show();//display the response on screen
+
+
+    }
     }
 
 }

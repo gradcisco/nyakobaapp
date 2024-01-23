@@ -172,7 +172,12 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Print state==" + ret, Toast.LENGTH_LONG).show();//display the response on screen
 
 
-            posApiHelper.PrintStr("                                         \n");
+            posApiHelper.PrintStr("Appolinalis Ogaro testing             \n");
+            posApiHelper.PrintStr("Appolinalis Ogaro testing             \n");
+            posApiHelper.PrintStr("Appolinalis Ogaro testing             \n");
+            posApiHelper.PrintStr("Appolinalis Ogaro testing             \n");
+            posApiHelper.PrintStr("Appolinalis Ogaro testing             \n");
+            posApiHelper.PrintStr("Appolinalis Ogaro testing             \n");
             ret = posApiHelper.PrintStart();
 
         Toast.makeText(getApplicationContext(), "3" + ret, Toast.LENGTH_LONG).show();//display the response on screen

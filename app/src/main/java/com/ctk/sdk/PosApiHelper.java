@@ -110,7 +110,7 @@ public class PosApiHelper {
     private ICiontekPosService mPosService;
     private static PosApiHelper mInstance;
 
-    private PosApiHelper() {
+    public PosApiHelper() {
         try {
             Class serviceManager = Class.forName("android.os.ServiceManager");
             Method method = serviceManager.getMethod("getService", String.class);

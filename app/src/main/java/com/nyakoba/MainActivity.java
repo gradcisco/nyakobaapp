@@ -40,7 +40,7 @@ import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 public class MainActivity extends AppCompatActivity {
 
-    PosApiHelper posApiHelper = PosApiHelper.getInstance();
+    PosApiHelper posApiHelper = new PosApiHelper();
     int ret = -1;
 
     Context mContext;
@@ -172,14 +172,11 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Print state==" + ret, Toast.LENGTH_LONG).show();//display the response on screen
 
 
+            posApiHelper.PrintStr("                                         \n");
+            ret = posApiHelper.PrintStart();
 
-        posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
-        posApiHelper.PrintStr("  NYAKOBA FARMERS RURAL SACCO.\n");
-        posApiHelper.PrintStr("  Mobile No. +254-705-799-293.\n");
-        posApiHelper.PrintStr("     CASH WITHDRAWAL RECEIPT \n");
-
-        Toast.makeText(getApplicationContext(), "2", Toast.LENGTH_LONG).show();//display the response on screen
-        ret = posApiHelper.PrintStart();
+        Toast.makeText(getApplicationContext(), "3" + ret, Toast.LENGTH_LONG).show();//display the response on screen
+    //    ret = posApiHelper.PrintStart();
 
 
     } catch (Exception ex) {

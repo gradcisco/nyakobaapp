@@ -29,7 +29,7 @@ import java.util.UUID;
 
 public class WithDrawActivity extends AppCompatActivity {
 
-    PosApiHelper posApiHelper = PosApiHelper.getInstance();
+    PosApiHelper posApiHelper = new PosApiHelper();
 
     int ret = -1;
 
@@ -37,8 +37,8 @@ public class WithDrawActivity extends AppCompatActivity {
     private StringRequest mStringRequest;
 
     private ProgressBar loadingPB;
-    private String url = "http://192.168.50.160:8080/withdrawal";
-    private String member_url = "http://192.168.50.160:8080/clientdetails";
+    private String url = "http://192.168.222.5:8080/withdrawal";
+    private String member_url = "http://192.168.222.5:8080/clientdetails";
 
     private EditText editTextGrowerNo, editTextIdNo, editTextAmount, balance, memberName;
     private Button withdrawBtn, getMembBtn;

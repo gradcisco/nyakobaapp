@@ -104,7 +104,7 @@
             <com.google.android.material.button.MaterialButton
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:onClick="printTest"
+                    android:onClick="login"
                     android:text="Login"/>
 
 

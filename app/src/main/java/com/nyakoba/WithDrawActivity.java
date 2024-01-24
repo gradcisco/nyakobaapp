@@ -29,7 +29,7 @@ import java.util.UUID;
 
 public class WithDrawActivity extends AppCompatActivity {
 
-    PosApiHelper posApiHelper = PosApiHelper.getInstance();
+    PosApiHelper posApiHelper = new PosApiHelper();
 
     int ret = -1;
 

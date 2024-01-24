@@ -29,7 +29,7 @@ import java.util.UUID;
 
 public class WithDrawActivity extends AppCompatActivity {
 
-    PosApiHelper posApiHelper = new PosApiHelper();
+    PosApiHelper posApiHelpers = new PosApiHelper();
 
     int ret = -1;
 
@@ -246,20 +246,20 @@ public class WithDrawActivity extends AppCompatActivity {
 
         try {
 
-            ret = posApiHelper.PrintCheckStatus();
+            ret = posApiHelpers.PrintCheckStatus();
 
             Toast.makeText(getApplicationContext(), "Print state==" + ret, Toast.LENGTH_LONG).show();//display the response on screen
 
 
-            posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
-            posApiHelper.PrintStr("  NYAKOBA FARMERS RURAL SACCO.\n");
-            posApiHelper.PrintStr("  Mobile No. +254-705-799-293.\n");
-            posApiHelper.PrintStr("     CASH WITHDRAWAL RECEIPT \n        " + copy + "\n");
-            posApiHelper.PrintStr("==== " + (response.has("lastTeaPeriod") ? response.get("lastTeaPeriod") : "FEB 2023 TEA INCLUSIVE") + " ====\n");
-            posApiHelper.PrintStr("*******************************\n");
-            posApiHelper.PrintStr("Account Name: " + (response.has("accname") ? response.get("accname") : "Dummy") + "\n");
-            posApiHelper.PrintStr("Grower No:      " + (response.has("grNo") ? response.get("grNo") : "Dummy GR NO") + "\n");
-            posApiHelper.PrintStr("Transaction No: " + (response.has("transactionNo") ? response.get("transactionNo") : "Dummy transactionno") + "\n");
+            posApiHelpers.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
+            posApiHelpers.PrintStr("  NYAKOBA FARMERS RURAL SACCO.\n");
+            posApiHelpers.PrintStr("  Mobile No. +254-705-799-293.\n");
+            posApiHelpers.PrintStr("     CASH WITHDRAWAL RECEIPT \n        " + copy + "\n");
+            posApiHelpers.PrintStr("==== " + (response.has("lastTeaPeriod") ? response.get("lastTeaPeriod") : "FEB 2023 TEA INCLUSIVE") + " ====\n");
+            posApiHelpers.PrintStr("*******************************\n");
+            posApiHelpers.PrintStr("Account Name: " + (response.has("accname") ? response.get("accname") : "Dummy") + "\n");
+            posApiHelpers.PrintStr("Grower No:      " + (response.has("grNo") ? response.get("grNo") : "Dummy GR NO") + "\n");
+            posApiHelpers.PrintStr("Transaction No: " + (response.has("transactionNo") ? response.get("transactionNo") : "Dummy transactionno") + "\n");
 
             Toast.makeText(getApplicationContext(), "2", Toast.LENGTH_LONG).show();//display the response on screen
 
@@ -270,48 +270,48 @@ public class WithDrawActivity extends AppCompatActivity {
                 dateFormat = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss.SSS");
 
                 String formattedDate = myDateObj.format(dateFormat);
-                posApiHelper.PrintStr("Date: " + formattedDate + "\n");
+                posApiHelpers.PrintStr("Date: " + formattedDate + "\n");
             } else {
-                posApiHelper.PrintStr("Date: " + new Date() + "\n");
+                posApiHelpers.PrintStr("Date: " + new Date() + "\n");
             }
-            posApiHelper.PrintStr("Previous Balance: Ksh." + (response.has("previousBalance") ? response.get("previousBalance") : "Dummy previousBalance") + "\n");
-            posApiHelper.PrintSetBold(1);
-            posApiHelper.PrintSetFont((byte) 34, (byte) 34, (byte) 0x33);
-            posApiHelper.PrintStr("Transaction Amt: Ksh." + (response.has("amt") ? response.get("amt") : "0.0") + "\n");
-            posApiHelper.PrintSetBold(0);
-            posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
-            posApiHelper.PrintStr("Commission:  " + (response.has("commission") ? response.get("commission") : "Dummy commission") + "\n");
-            posApiHelper.PrintStr("Excise Duty: " + (response.has("exciseDuty") ? response.get("exciseDuty") : "Dummy exciseduty") + "          " + (response.has("codd") ? response.get("codd") : "XYZ") + "\n");
-            posApiHelper.PrintStr("Balance After: " + (response.has("balanceAfter") ? response.get("balanceAfter") : "Dummy balanceafter") + "\n");
-            posApiHelper.PrintSetBold(1);
-            posApiHelper.PrintSetFont((byte) 34, (byte) 34, (byte) 0x33);
-            posApiHelper.PrintStr((response.has("amtInWords") ? response.get("amtInWords") : "Dummy Word amount") + "\n");
-            posApiHelper.PrintSetBold(0);
-            posApiHelper.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
-            posApiHelper.PrintStr("*******************************\n");
+            posApiHelpers.PrintStr("Previous Balance: Ksh." + (response.has("previousBalance") ? response.get("previousBalance") : "Dummy previousBalance") + "\n");
+            posApiHelpers.PrintSetBold(1);
+            posApiHelpers.PrintSetFont((byte) 34, (byte) 34, (byte) 0x33);
+            posApiHelpers.PrintStr("Transaction Amt: Ksh." + (response.has("amt") ? response.get("amt") : "0.0") + "\n");
+            posApiHelpers.PrintSetBold(0);
+            posApiHelpers.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
+            posApiHelpers.PrintStr("Commission:  " + (response.has("commission") ? response.get("commission") : "Dummy commission") + "\n");
+            posApiHelpers.PrintStr("Excise Duty: " + (response.has("exciseDuty") ? response.get("exciseDuty") : "Dummy exciseduty") + "          " + (response.has("codd") ? response.get("codd") : "XYZ") + "\n");
+            posApiHelpers.PrintStr("Balance After: " + (response.has("balanceAfter") ? response.get("balanceAfter") : "Dummy balanceafter") + "\n");
+            posApiHelpers.PrintSetBold(1);
+            posApiHelpers.PrintSetFont((byte) 34, (byte) 34, (byte) 0x33);
+            posApiHelpers.PrintStr((response.has("amtInWords") ? response.get("amtInWords") : "Dummy Word amount") + "\n");
+            posApiHelpers.PrintSetBold(0);
+            posApiHelpers.PrintSetFont((byte) 24, (byte) 24, (byte) 0x00);
+            posApiHelpers.PrintStr("*******************************\n");
             String payeeRelation = (response.has("relationship") ? response.get("relationship").toString() : "Dummy relationship");
-            posApiHelper.PrintStr("Payee Details: " + payeeRelation + "\n");
-            posApiHelper.PrintStr((response.has("payeeName") ? response.get("payeeName") : "Dummy payeename") + "\n");
-            posApiHelper.PrintStr("*******************************\n");
-            posApiHelper.PrintStr(" Signature or left thumb print\n");
-            posApiHelper.PrintStr("   Payee               Teller\n");
-            posApiHelper.PrintStr("                                       \n");
-            posApiHelper.PrintStr("                                       \n");
-            posApiHelper.PrintStr("                                       \n");
-            posApiHelper.PrintStr("                                       \n");
-            posApiHelper.PrintStr("*******************************\n");
-            posApiHelper.PrintStr("Thank you for banking with us.\n");
+            posApiHelpers.PrintStr("Payee Details: " + payeeRelation + "\n");
+            posApiHelpers.PrintStr((response.has("payeeName") ? response.get("payeeName") : "Dummy payeename") + "\n");
+            posApiHelpers.PrintStr("*******************************\n");
+            posApiHelpers.PrintStr(" Signature or left thumb print\n");
+            posApiHelpers.PrintStr("   Payee               Teller\n");
+            posApiHelpers.PrintStr("                                       \n");
+            posApiHelpers.PrintStr("                                       \n");
+            posApiHelpers.PrintStr("                                       \n");
+            posApiHelpers.PrintStr("                                       \n");
+            posApiHelpers.PrintStr("*******************************\n");
+            posApiHelpers.PrintStr("Thank you for banking with us.\n");
             String tellerName = (response.has("teller") ? response.get("teller").toString() : "Dummy teller");
             if (agentName.equalsIgnoreCase(tellerName)) {
-                posApiHelper.PrintStr("You were served by:- " + agentName + ".\n");
+                posApiHelpers.PrintStr("You were served by:- " + agentName + ".\n");
             } else {
-                posApiHelper.PrintStr("You were served by:- " + agentName + " & "+tellerName+"\n");
+                posApiHelpers.PrintStr("You were served by:- " + agentName + " & "+tellerName+"\n");
             }
-            posApiHelper.PrintStr("*******************************\n");
-            posApiHelper.PrintStr("                                       \n");
-            posApiHelper.PrintStr("                                       \n");
-            posApiHelper.PrintStr("                                       \n");
-            ret = posApiHelper.PrintStart();
+            posApiHelpers.PrintStr("*******************************\n");
+            posApiHelpers.PrintStr("                                       \n");
+            posApiHelpers.PrintStr("                                       \n");
+            posApiHelpers.PrintStr("                                       \n");
+            ret = posApiHelpers.PrintStart();
 
             changeActivity(getApplicationContext());
 

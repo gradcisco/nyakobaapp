@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
             posApiHelper.PrintStr("Appolinalis Ogaro testing             \n");
             ret = posApiHelper.PrintStart();
 
-        Toast.makeText(getApplicationContext(), "3" + ret, Toast.LENGTH_LONG).show();//display the response on screen
+        Toast.makeText(getApplicationContext(), "4" + ret, Toast.LENGTH_LONG).show();//display the response on screen
     //    ret = posApiHelper.PrintStart();
 
 
